@@ -4,11 +4,14 @@ class Assets {
 
   static const String imagesAccountIcon1 = 'assets/images/account_icon1.svg';
   static const String imagesAccountIcon2 = 'assets/images/account_icon2.svg';
+  static const String imagesCameraIcon = 'assets/images/camera_icon.svg';
   static const String imagesCartIcon1 = 'assets/images/cart_icon1.svg';
   static const String imagesCartIcon2 = 'assets/images/cart_icon2.svg';
   static const String imagesCategoriesIcon1 = 'assets/images/categories_icon1.svg';
   static const String imagesCategoriesIcon2 = 'assets/images/categories_icon2.svg';
+  static const String imagesFilterIcon = 'assets/images/filter_icon.svg';
   static const String imagesHomeIcon1 = 'assets/images/home_icon1.svg';
   static const String imagesHomeIcon2 = 'assets/images/home_icon2.svg';
+  static const String imagesSearchIcon = 'assets/images/search_icon.svg';
 
 }
