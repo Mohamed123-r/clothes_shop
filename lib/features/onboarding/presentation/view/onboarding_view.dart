@@ -1,3 +1,4 @@
+import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:clothes_shop_app/core/widgets/custom_button.dart';
 import 'package:clothes_shop_app/features/onboarding/presentation/view/widgets/onboarding_bottom_navigation_bar.dart';
 import 'package:clothes_shop_app/features/onboarding/presentation/view/widgets/onboarding_view_body.dart';
@@ -89,17 +90,23 @@ class _OnboardingViewState extends State<OnboardingView>
               height: 24,
             ),
             _selectedIndex == 2
-                ?const SizedBox(
-              height: 24,
-            )
-                : const SizedBox(
-
-            ),
+                ? const SizedBox(
+                    height: 24,
+                  )
+                : const SizedBox(),
             Padding(
-              padding:  const EdgeInsets.symmetric(horizontal: 8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: CustomButton(
-                title: _selectedIndex != 2 ? 'Next' :"Get Start",
+                title: _selectedIndex != 2 ? 'Next' : "Get Start",
                 onPressed: () {
+                  if (_selectedIndex == 2) {
+                    Navigator.pushReplacement(
+                      context,
+                      AppRouter.router(
+                        const RouteSettings(name: AppRouter.kStartView),
+                      ),
+                    );
+                  }
                   _controller?.animateTo(_selectedIndex += 1);
                   setState(
                     () {},

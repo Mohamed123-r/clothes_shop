@@ -1,9 +1,17 @@
 import 'package:clothes_shop_app/features/splash/presentation/view/splash_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'core/database/cache/cache_helper.dart';
 
 Future<void> main() async {
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      systemNavigationBarColor: Colors.transparent, // navigation bar color
+      statusBarColor: Colors.transparent,
+    ),
+  );
+
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper().init();
   runApp(const MyApp());
