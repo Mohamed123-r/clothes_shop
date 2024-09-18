@@ -1,6 +1,11 @@
+import 'package:clothes_shop_app/features/splash/presentation/view/splash_view.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+import 'core/database/cache/cache_helper.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await CacheHelper().init();
   runApp(const MyApp());
 }
 
@@ -11,7 +16,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(),
+      debugShowCheckedModeBanner: false,
+      home: SplashView(),
     );
   }
 }
