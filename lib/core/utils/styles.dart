@@ -5,7 +5,6 @@ abstract class Styles {
     fontSize: 24,
     fontWeight: FontWeight.bold,
     letterSpacing: 0,
-    height: 3.6,
   );
 
   static const heading2Bold = TextStyle(
