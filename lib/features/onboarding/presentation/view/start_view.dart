@@ -1,3 +1,5 @@
+
+import 'package:clothes_shop_app/features/onboarding/presentation/view/widgets/start_view_body.dart';
 import 'package:flutter/material.dart';
 
 class StartView extends StatelessWidget {
@@ -5,6 +7,8 @@ class StartView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      body: StartViewBody(),
+    );
   }
 }
