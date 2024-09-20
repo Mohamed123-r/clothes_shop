@@ -1,3 +1,4 @@
+import 'package:clothes_shop_app/features/authentication/login/presentation/view/log_in_view.dart';
 import 'package:clothes_shop_app/features/onboarding/presentation/view/start_view.dart';
 import 'package:flutter/material.dart';
 
@@ -33,6 +34,11 @@ abstract class AppRouter {
         return MaterialPageRoute(builder: (context) {
           return const StartView(); //replace this Scaffold with a on boarding Screen
         });
+
+      case kLogInView:
+        return MaterialPageRoute(builder: (context) {
+          return const LogInView();
+        }); //replace this Scaffold with a on boarding Screen
 
       default:
         return MaterialPageRoute(builder: (context) {

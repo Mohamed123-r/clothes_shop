@@ -1,9 +1,9 @@
 import 'package:clothes_shop_app/constants.dart';
+import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:clothes_shop_app/core/utils/styles.dart';
 import 'package:clothes_shop_app/core/widgets/custom_button.dart';
 import 'package:clothes_shop_app/generated/assets.dart';
 import 'package:flutter/material.dart';
-
 
 class StartViewBody extends StatelessWidget {
   const StartViewBody({
@@ -53,7 +53,16 @@ class StartViewBody extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    AppRouter.router(
+                      const RouteSettings(
+                        name: AppRouter.kLogInView,
+                      ),
+                    ),
+                  );
+                },
                 child: Text(
                   "LOGIN",
                   style: Styles.textButton.copyWith(
