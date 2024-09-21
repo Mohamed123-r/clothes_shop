@@ -6,6 +6,8 @@ import 'package:clothes_shop_app/core/widgets/custom_password_input.dart';
 import 'package:clothes_shop_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../../core/utils/app_router.dart';
+
 
 class LogInViewBody extends StatelessWidget {
   const LogInViewBody({super.key});
@@ -70,7 +72,18 @@ class LogInViewBody extends StatelessWidget {
                 ),
               ),
               TextButton(
-                onPressed: () {},
+
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    AppRouter.router(
+                      const RouteSettings(
+                        name: AppRouter.kSignUpView,
+                      ),
+                    ),
+                  );
+
+                },
                 child: const Text(
                   'SIGN UP',
                   style: Styles.caption1Regular,

@@ -1,5 +1,6 @@
 import 'package:clothes_shop_app/features/authentication/login/presentation/view/log_in_view.dart';
 import 'package:clothes_shop_app/features/authentication/signup/presentation/view/sign_up_view.dart';
+import 'package:clothes_shop_app/features/home/presentation/view/home_view.dart';
 import 'package:clothes_shop_app/features/onboarding/presentation/view/start_view.dart';
 import 'package:flutter/material.dart';
 
@@ -45,6 +46,11 @@ abstract class AppRouter {
         return MaterialPageRoute(builder: (context) {
           return const SignUpView();
         }); //replace this Scaffold with a on boarding Screen
+
+      case kHomeView :
+        return MaterialPageRoute(builder: (context) {
+          return const HomeView();
+        }); //
 
       default:
         return MaterialPageRoute(builder: (context) {
