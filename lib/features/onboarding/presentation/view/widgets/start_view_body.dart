@@ -39,7 +39,18 @@ class StartViewBody extends StatelessWidget {
           const SizedBox(
             height: 32,
           ),
-          CustomButton(onPressed: () {}, title: "Sign up"),
+          CustomButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  AppRouter.router(
+                    const RouteSettings(
+                      name: AppRouter.kSignUpView,
+                    ),
+                  ),
+                );
+              },
+              title: "Sign up"),
           const SizedBox(
             height: 16,
           ),
