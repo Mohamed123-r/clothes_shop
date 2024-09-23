@@ -1,3 +1,4 @@
+import 'package:clothes_shop_app/features/home/presentation/view/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../constants.dart';
@@ -70,9 +71,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               ]),
         ),
         body: <Widget>[
-          Container(
-            color: Colors.red,
-          ),
+         const HomeView(),
           Container(
             color: Colors.deepOrange,
           ),

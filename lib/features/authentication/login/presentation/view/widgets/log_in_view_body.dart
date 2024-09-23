@@ -59,7 +59,16 @@ class LogInViewBody extends StatelessWidget {
             height: 32,
           ),
           CustomButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                AppRouter.router(
+                  const RouteSettings(
+                    name: AppRouter.kBottomNavigationBar,
+                  ),
+                ),
+              );
+            },
             title: 'Login',
           ),
           Row(
