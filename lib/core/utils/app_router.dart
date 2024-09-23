@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../features/onboarding/presentation/view/onboarding_view.dart';
 import '../../features/splash/presentation/view/splash_view.dart';
+import '../widgets/custom_bottom_navigation_bar.dart';
 
 abstract class AppRouter {
   static const kSplash = '/';
@@ -46,6 +47,11 @@ abstract class AppRouter {
         return MaterialPageRoute(builder: (context) {
           return const SignUpView();
         }); //replace this Scaffold with a on boarding Screen
+
+    case kBottomNavigationBar:
+        return MaterialPageRoute(builder: (context) {
+          return const CustomBottomNavigationBar();
+        });
 
       case kHomeView :
         return MaterialPageRoute(builder: (context) {
