@@ -11,7 +11,7 @@ class CustomListOfColor extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 32,
-      height: 120,
+      height: 80,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
         boxShadow: const [
@@ -28,26 +28,26 @@ class CustomListOfColor extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           CircleAvatar(
-            radius: 10,
+            radius: 7,
             backgroundColor: colors[0],
             child: const Center(
               child: Icon(
                 Icons.check,
                 color: kGreyColor,
-                size: 16,
+                size: 12,
               ),
             ),
           ),
           CircleAvatar(
-            radius: 10,
+            radius: 7,
             backgroundColor: colors[1],
           ),
           CircleAvatar(
-            radius: 10,
+            radius: 7,
             backgroundColor: colors[2],
           ),
           CircleAvatar(
-            radius: 10,
+            radius: 7,
             backgroundColor: colors[3],
           ),
         ],
