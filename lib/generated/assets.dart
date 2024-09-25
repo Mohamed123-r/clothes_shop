@@ -20,6 +20,7 @@ class Assets {
   static const String imagesOnboarding3 = 'assets/images/onboarding3.png';
   static const String imagesPasswordIcon = 'assets/images/password_icon.svg';
   static const String imagesPersonIcon = 'assets/images/person_icon.svg';
+  static const String imagesProducteDetailsTest = 'assets/images/producteDetailsTest.png';
   static const String imagesSearchIcon = 'assets/images/search_icon.svg';
   static const String imagesSliderTest = 'assets/images/sliderTest.png';
   static const String imagesSplashImage = 'assets/images/splashImage.png';
