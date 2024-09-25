@@ -1,6 +1,7 @@
 import 'package:clothes_shop_app/features/authentication/login/presentation/view/log_in_view.dart';
 import 'package:clothes_shop_app/features/authentication/signup/presentation/view/sign_up_view.dart';
 import 'package:clothes_shop_app/features/home/presentation/view/home_view.dart';
+import 'package:clothes_shop_app/features/home/presentation/view/product_details_view.dart';
 import 'package:clothes_shop_app/features/onboarding/presentation/view/start_view.dart';
 import 'package:clothes_shop_app/features/search/presentation/view/search_view.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ abstract class AppRouter {
   static const kSignUpView = '/signup';
   static const kBottomNavigationBar = '/bottomNavigationBar';
   static const kHomeView = '/home';
+  static const kProductDetailsView = '/productDetails';
   static const kSearchView = '/Search';
 
   static Route<Object?> router(RouteSettings settings) {
@@ -54,6 +56,11 @@ abstract class AppRouter {
       case kHomeView:
         return MaterialPageRoute(builder: (context) {
           return const HomeView();
+        });
+
+      case kProductDetailsView:
+        return MaterialPageRoute(builder: (context) {
+          return const ProductDetailsView();
         });
 
       case kSearchView:
