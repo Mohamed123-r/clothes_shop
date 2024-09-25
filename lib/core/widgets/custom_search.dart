@@ -5,7 +5,9 @@ import '../../constants.dart';
 import '../utils/styles.dart';
 
 class CustomSearch extends StatelessWidget {
-  const CustomSearch({super.key});
+  const CustomSearch({super.key, this.onTabFromFilter});
+
+  final Function()? onTabFromFilter;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class CustomSearch extends StatelessWidget {
                   const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               filled: true,
               fillColor: kWhiteColor,
-              hintText: 'Search',
+              hintText: 'What are you looking for ?',
               hintStyle: Styles.buttonBold.copyWith(
                 color: kGreyColor,
               ),
@@ -41,16 +43,19 @@ class CustomSearch extends StatelessWidget {
         const SizedBox(
           width: 20,
         ),
-        Container(
-          height: 48,
-          width: 48,
-          decoration: BoxDecoration(
-            color: kWhiteColor,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Center(
-            child: SvgPicture.asset(
-              Assets.imagesFilterIcon,
+        GestureDetector(
+          onTap: onTabFromFilter,
+          child: Container(
+            height: 48,
+            width: 48,
+            decoration: BoxDecoration(
+              color: kWhiteColor,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Center(
+              child: SvgPicture.asset(
+                Assets.imagesFilterIcon,
+              ),
             ),
           ),
         )

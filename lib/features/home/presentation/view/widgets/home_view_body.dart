@@ -1,4 +1,5 @@
 import 'package:clothes_shop_app/constants.dart';
+import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:clothes_shop_app/core/widgets/custom_search.dart';
 import 'package:clothes_shop_app/features/home/presentation/view/widgets/sliver_appbar.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,18 @@ class HomeViewBody extends StatelessWidget {
                         bottomLeft: Radius.circular(24),
                         bottomRight: Radius.circular(24),
                       )),
-                  child: const CustomSearch(),
+                  child: CustomSearch(
+                    onTabFromFilter: () {
+                      Navigator.push(
+                        context,
+                        AppRouter.router(
+                          const RouteSettings(
+                            name: AppRouter.kSearchView,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 ),
                 const Expanded(
                   child: SingleChildScrollView(

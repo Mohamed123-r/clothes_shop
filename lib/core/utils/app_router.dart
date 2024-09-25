@@ -2,6 +2,7 @@ import 'package:clothes_shop_app/features/authentication/login/presentation/view
 import 'package:clothes_shop_app/features/authentication/signup/presentation/view/sign_up_view.dart';
 import 'package:clothes_shop_app/features/home/presentation/view/home_view.dart';
 import 'package:clothes_shop_app/features/onboarding/presentation/view/start_view.dart';
+import 'package:clothes_shop_app/features/search/presentation/view/search_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../features/onboarding/presentation/view/onboarding_view.dart';
@@ -13,13 +14,10 @@ abstract class AppRouter {
   static const kOnBoarding = '/onBoarding';
   static const kStartView = '/start';
   static const kLogInView = '/login';
-  static const kForgetPasswordView = '/forgetPassword';
-  static const kPasswordCreatedSuccessfullyView =
-      '/passwordCreatedSuccessfully';
   static const kSignUpView = '/signup';
-  static const kSignupEmailVerification = '/signupEmailVerification';
   static const kBottomNavigationBar = '/bottomNavigationBar';
   static const kHomeView = '/home';
+  static const kSearchView = '/Search';
 
   static Route<Object?> router(RouteSettings settings) {
     switch (settings.name) {
@@ -48,15 +46,20 @@ abstract class AppRouter {
           return const SignUpView();
         }); //replace this Scaffold with a on boarding Screen
 
-    case kBottomNavigationBar:
+      case kBottomNavigationBar:
         return MaterialPageRoute(builder: (context) {
           return const CustomBottomNavigationBar();
         });
 
-      case kHomeView :
+      case kHomeView:
         return MaterialPageRoute(builder: (context) {
           return const HomeView();
-        }); //
+        });
+
+      case kSearchView:
+        return MaterialPageRoute(builder: (context) {
+          return const SearchView();
+        });
 
       default:
         return MaterialPageRoute(builder: (context) {
