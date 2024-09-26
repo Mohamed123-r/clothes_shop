@@ -1,4 +1,5 @@
 import 'package:clothes_shop_app/features/home/presentation/view/home_view.dart';
+import 'package:clothes_shop_app/features/profile/presentation/view/account_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../constants.dart';
@@ -66,21 +67,19 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                         ? Assets.imagesAccountIcon1
                         : Assets.imagesAccountIcon2,
                   ),
-                  label: 'Wishlist',
+                  label: 'Account',
                 ),
               ]),
         ),
         body: <Widget>[
-         const HomeView(),
+          const HomeView(),
           Container(
             color: Colors.deepOrange,
           ),
           Container(
             color: Colors.black12,
           ),
-          Container(
-            color: Colors.green,
-          ),
+          const AccountView(),
         ][_selectedIndex]);
   }
 }
