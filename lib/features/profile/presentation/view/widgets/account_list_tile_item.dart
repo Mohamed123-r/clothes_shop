@@ -1,0 +1,33 @@
+import 'package:clothes_shop_app/constants.dart';
+import 'package:clothes_shop_app/core/utils/styles.dart';
+import 'package:flutter/material.dart';
+
+class AccountListTileItem extends StatelessWidget {
+  const AccountListTileItem({
+    super.key,
+    required this.title,
+    required this.icon,
+  });
+
+  final String title;
+
+  final IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: const Icon(Icons.list_alt, size: 18, color: kGreyColor),
+      title: Text(
+        title,
+        style: Styles.bodyText2Regular.copyWith(
+          color: kGreyColor,
+        ),
+      ),
+      trailing: Icon(
+        icon,
+        color: kGreyColor,
+        size: 18,
+      ),
+    );
+  }
+}
