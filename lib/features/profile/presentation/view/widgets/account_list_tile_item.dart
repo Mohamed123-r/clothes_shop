@@ -16,15 +16,19 @@ class AccountListTileItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: const Icon(Icons.list_alt, size: 18, color: kGreyColor),
+      leading: Icon(
+        icon,
+        size: 18,
+        color: kGreyColor,
+      ),
       title: Text(
         title,
         style: Styles.bodyText2Regular.copyWith(
           color: kGreyColor,
         ),
       ),
-      trailing: Icon(
-        icon,
+      trailing: const Icon(
+        Icons.arrow_forward_ios,
         color: kGreyColor,
         size: 18,
       ),
