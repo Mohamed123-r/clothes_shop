@@ -14,14 +14,51 @@ class AccountView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: customAppbar(context, title: 'Your Profile'),
-        body: const SingleChildScrollView(
+        body: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              AccountSection(),
-              ListViewSection(),
+              const AccountSection(),
+              const ListViewSection(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Row(
+                  children: [
+                    Switch(
+                      value: false,
+                      onChanged: (value) {},
+                      inactiveThumbColor: kDarkGreyColor,
+                      inactiveTrackColor: kWhiteColor,
+                      activeColor: kWhiteColor,
+                      activeTrackColor: kDarkGreyColor,
+                    ),
+                    Text(
+                      'Darkmood',
+                      style: Styles.bodyText1Regular.copyWith(
+                        color: kDarkGreyColor,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Row(
+                  children: [
+                    IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.logout_outlined)),
+                    Text(
+                      'Sign Out',
+                      style: Styles.bodyText1Regular.copyWith(
+                        color: kDarkGreyColor,
+                      ),
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
         ));
   }
 }
-
