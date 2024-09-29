@@ -1,5 +1,6 @@
 import 'package:clothes_shop_app/features/authentication/login/presentation/view/log_in_view.dart';
 import 'package:clothes_shop_app/features/authentication/signup/presentation/view/sign_up_view.dart';
+import 'package:clothes_shop_app/features/favorite/presentation/view/my_favorite.dart';
 import 'package:clothes_shop_app/features/home/presentation/view/home_view.dart';
 import 'package:clothes_shop_app/features/productDetails/presentation/view/product_details_view.dart';
 import 'package:clothes_shop_app/features/onboarding/presentation/view/start_view.dart';
@@ -20,6 +21,9 @@ abstract class AppRouter {
   static const kHomeView = '/home';
   static const kProductDetailsView = '/productDetails';
   static const kSearchView = '/Search';
+  static const kAccountView = '/account';
+  static const kCartView = '/cart';
+  static const kFavoriteView = '/favorite';
 
   static Route<Object?> router(RouteSettings settings) {
     switch (settings.name) {
@@ -66,6 +70,11 @@ abstract class AppRouter {
       case kSearchView:
         return MaterialPageRoute(builder: (context) {
           return const SearchView();
+        });
+
+      case kFavoriteView:
+        return MaterialPageRoute(builder: (context) {
+          return const MyFavorite();
         });
 
       default:
