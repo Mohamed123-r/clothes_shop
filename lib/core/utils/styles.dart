@@ -23,13 +23,13 @@ abstract class Styles {
   static const subTitle1Bold = TextStyle(
     fontSize: 16.0,
     fontWeight: FontWeight.bold,
-    height: 2.4,
+
   );
 
   static const subTitle2Bold = TextStyle(
     fontSize: 14.0,
     fontWeight: FontWeight.bold,
-    height: 2.0,
+
   );
 
   static const bodyText1Regular = TextStyle(

@@ -1,3 +1,4 @@
+import 'package:clothes_shop_app/features/cart/presentation/view/my_cart_view.dart';
 import 'package:clothes_shop_app/features/home/presentation/view/home_view.dart';
 import 'package:clothes_shop_app/features/profile/presentation/view/account_view.dart';
 import 'package:flutter/material.dart';
@@ -74,11 +75,9 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         body: <Widget>[
           const HomeView(),
           Container(
-            color: Colors.deepOrange,
-          ),
-          Container(
             color: Colors.black12,
           ),
+          const MyCartView(),
           const AccountView(),
         ][_selectedIndex]);
   }
