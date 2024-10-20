@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/verification_view_body.dart';
+
 class VerificationView extends StatelessWidget {
   const VerificationView({super.key});
 
@@ -16,6 +18,7 @@ class VerificationView extends StatelessWidget {
           ),
         ),
       ),
+      body: const VerificationViewBody(),
     );
   }
 }
