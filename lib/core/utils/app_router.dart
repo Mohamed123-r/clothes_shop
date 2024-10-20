@@ -7,6 +7,7 @@ import 'package:clothes_shop_app/features/onboarding/presentation/view/start_vie
 import 'package:clothes_shop_app/features/search/presentation/view/search_view.dart';
 import 'package:flutter/material.dart';
 
+import '../../features/authentication/login/presentation/view/forgot_password_view.dart';
 import '../../features/onboarding/presentation/view/onboarding_view.dart';
 import '../../features/splash/presentation/view/splash_view.dart';
 import '../widgets/custom_bottom_navigation_bar.dart';
@@ -16,6 +17,7 @@ abstract class AppRouter {
   static const kOnBoarding = '/onBoarding';
   static const kStartView = '/start';
   static const kLogInView = '/login';
+  static const kForgotPasswordView = '/forgotPassword';
   static const kSignUpView = '/signup';
   static const kBottomNavigationBar = '/bottomNavigationBar';
   static const kHomeView = '/home';
@@ -46,6 +48,11 @@ abstract class AppRouter {
         return MaterialPageRoute(builder: (context) {
           return const LogInView();
         }); //replace this Scaffold with a on boarding Screen
+
+      case kForgotPasswordView:
+        return MaterialPageRoute(builder: (context) {
+          return const ForgotPasswordView();
+        });
 
       case kSignUpView:
         return MaterialPageRoute(builder: (context) {
