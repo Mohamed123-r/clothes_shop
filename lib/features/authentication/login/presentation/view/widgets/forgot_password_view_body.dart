@@ -1,4 +1,5 @@
 import 'package:clothes_shop_app/constants.dart';
+import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:clothes_shop_app/core/utils/styles.dart';
 import 'package:clothes_shop_app/core/widgets/custom_button.dart';
 import 'package:clothes_shop_app/core/widgets/custom_input.dart';
@@ -45,7 +46,16 @@ class ForgotPasswordViewBody extends StatelessWidget {
               height: 32,
             ),
             CustomButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  AppRouter.router(
+                    const RouteSettings(
+                      name: AppRouter.kVerificationView,
+                    ),
+                  ),
+                );
+              },
               title: 'Send',
             ),
           ],

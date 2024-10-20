@@ -8,6 +8,7 @@ import 'package:clothes_shop_app/features/search/presentation/view/search_view.d
 import 'package:flutter/material.dart';
 
 import '../../features/authentication/login/presentation/view/forgot_password_view.dart';
+import '../../features/authentication/login/presentation/view/verification_view.dart';
 import '../../features/onboarding/presentation/view/onboarding_view.dart';
 import '../../features/splash/presentation/view/splash_view.dart';
 import '../widgets/custom_bottom_navigation_bar.dart';
@@ -18,6 +19,7 @@ abstract class AppRouter {
   static const kStartView = '/start';
   static const kLogInView = '/login';
   static const kForgotPasswordView = '/forgotPassword';
+  static const kVerificationView = '/verification';
   static const kSignUpView = '/signup';
   static const kBottomNavigationBar = '/bottomNavigationBar';
   static const kHomeView = '/home';
@@ -52,6 +54,11 @@ abstract class AppRouter {
       case kForgotPasswordView:
         return MaterialPageRoute(builder: (context) {
           return const ForgotPasswordView();
+        });
+
+      case kVerificationView:
+        return MaterialPageRoute(builder: (context) {
+          return const VerificationView();
         });
 
       case kSignUpView:
