@@ -1,11 +1,9 @@
 import 'package:clothes_shop_app/constants.dart';
-import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:clothes_shop_app/core/utils/styles.dart';
-import 'package:clothes_shop_app/core/widgets/custom_button.dart';
-import 'package:clothes_shop_app/core/widgets/custom_input.dart';
-import 'package:clothes_shop_app/core/widgets/custom_password_input.dart';
-import 'package:clothes_shop_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+import 'call_action_section_sign_up_view.dart';
+import 'gender_section_from_sign_up_view.dart';
+import 'input_section_from_sign_up_view.dart';
 
 class SignUpViewBody extends StatelessWidget {
   const SignUpViewBody({super.key});
@@ -15,84 +13,36 @@ class SignUpViewBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          const Text(
-            'Sign up',
-            style: Styles.heading2Bold,
-          ),
-          Text(
-            'Create new account',
-            style: Styles.heading3Bold.copyWith(
-              color: kDarkGreyColor,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 8,
             ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          const CustomInput(
-            hintText: 'Enter your email',
-            labelText: 'Email',
-            prefixIcon: Assets.imagesEmailIcon,
-          ),
-          const SizedBox(
-            height: 12,
-          ),
-          const CustomInput(
-            hintText: 'Enter your name',
-            labelText: 'Username',
-            prefixIcon: Assets.imagesPersonIcon,
-          ),
-          const SizedBox(
-            height: 12,
-          ),
-          const CustomPasswordInput(
-            hintText: 'Enter your password',
-            labelText: 'Password',
-          ),
-          const SizedBox(
-            height: 12,
-          ),
-          const CustomPasswordInput(
-            hintText: 'Enter your password',
-            labelText: 'Confirm Password',
-          ),
-
-          const SizedBox(
-            height: 24,
-          ),
-          CustomButton(
-            onPressed: () {},
-            title: 'Sign up',
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Already have an account?',
-                style: Styles.bodyText1Regular.copyWith(
-                  color: kGreyColor,
-                ),
+            const Text(
+              'Sign up',
+              style: Styles.heading2Bold,
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            Text(
+              'Create new account',
+              style: Styles.heading3Bold.copyWith(
+                color: kDarkGreyColor,
               ),
-              TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    AppRouter.router(
-                      const RouteSettings(
-                        name: AppRouter.kLogInView,
-                      ),
-                    ),
-                  );
-                },
-                child: const Text(
-                  'LOGIN',
-                  style: Styles.caption1Regular,
-                ),
-              ),
-            ],
-          )
-        ]),
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            const InputSectionFromSignUpView(),
+            const SizedBox(height: 12.0),
+            const GenderSectionFromSignUpView(),
+            const CallActionSectionSignUpView(),
+          ],
+        ),
       ),
     );
   }
 }
+
