@@ -1,4 +1,5 @@
 import 'package:clothes_shop_app/constants.dart';
+import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:clothes_shop_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -20,20 +21,80 @@ class CategoriesSection extends StatelessWidget {
             'Categories',
             style: Styles.heading3Bold.copyWith(color: kDarkGreyColor),
           ),
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CategoriesItem(
-                title: 'Men',
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    AppRouter.router(
+                      const RouteSettings(
+                        name: AppRouter.kProductDetailsView,
+                      ),
+                    ),
+                  );
+                },
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      AppRouter.router(
+                        const RouteSettings(
+                          name: AppRouter.kProductDetailsView,
+                        ),
+                      ),
+                    );
+                  },
+                  child: CategoriesItem(
+                    title: 'Men',
+                  ),
+                ),
               ),
-              CategoriesItem(
-                title: 'Woman',
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    AppRouter.router(
+                      const RouteSettings(
+                        name: AppRouter.kProductDetailsView,
+                      ),
+                    ),
+                  );
+                },
+                child: CategoriesItem(
+                  title: 'Woman',
+                ),
               ),
-              CategoriesItem(
-                title: 'Kids',
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    AppRouter.router(
+                      const RouteSettings(
+                        name: AppRouter.kProductDetailsView,
+                      ),
+                    ),
+                  );
+                },
+                child: CategoriesItem(
+                  title: 'Kids',
+                ),
               ),
-              CategoriesItem(
-                title: 'New Arrival',
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    AppRouter.router(
+                      const RouteSettings(
+                        name: AppRouter.kProductDetailsView,
+                      ),
+                    ),
+                  );
+                },
+                child: CategoriesItem(
+                  title: 'New Arrival',
+                ),
               ),
             ],
           ),
