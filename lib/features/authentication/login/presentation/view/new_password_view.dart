@@ -1,3 +1,4 @@
+import 'package:clothes_shop_app/features/authentication/login/presentation/view/widgets/new_password_view_body.dart';
 import 'package:flutter/material.dart';
 
 class NewPasswordView extends StatelessWidget {
@@ -16,6 +17,7 @@ class NewPasswordView extends StatelessWidget {
           ),
         ),
       ),
+      body: const NewPasswordViewBody(),
     );
   }
 }

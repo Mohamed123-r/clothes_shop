@@ -2,12 +2,11 @@ import 'package:clothes_shop_app/constants.dart';
 import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:clothes_shop_app/core/utils/styles.dart';
 import 'package:clothes_shop_app/core/widgets/custom_button.dart';
+import 'package:clothes_shop_app/core/widgets/custom_password_input.dart';
 import 'package:flutter/material.dart';
 
-import 'custom_pinput.dart';
-
-class VerificationViewBody extends StatelessWidget {
-  const VerificationViewBody({super.key});
+class NewPasswordViewBody extends StatelessWidget {
+  const NewPasswordViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +20,14 @@ class VerificationViewBody extends StatelessWidget {
               height: 8,
             ),
             const Text(
-              'Verification',
+              'New Password',
               style: Styles.heading2Bold,
             ),
             const SizedBox(
               height: 16,
             ),
             Text(
-              'Check your e-mail we have sent you \nthe 6 digit code at your e-mail',
+              'Please enter a new password',
               textAlign: TextAlign.center,
               style: Styles.bodyText2Regular.copyWith(
                 color: kGreyColor,
@@ -37,7 +36,17 @@ class VerificationViewBody extends StatelessWidget {
             const SizedBox(
               height: 32,
             ),
-            const CustomPinput(),
+            const CustomPasswordInput(
+              hintText: 'Enter New Password',
+              labelText: 'New Password',
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            const CustomPasswordInput(
+              hintText: 'Confirm Password',
+              labelText: 'Confirm Password',
+            ),
             const SizedBox(
               height: 32,
             ),
@@ -47,12 +56,12 @@ class VerificationViewBody extends StatelessWidget {
                   context,
                   AppRouter.router(
                     const RouteSettings(
-                      name: AppRouter.kNewPasswordView,
+                      name: AppRouter.kVerificationView,
                     ),
                   ),
                 );
               },
-              title: 'Verify',
+              title: 'Send',
             ),
           ],
         ),
