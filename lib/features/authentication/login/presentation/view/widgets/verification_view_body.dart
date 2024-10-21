@@ -2,8 +2,6 @@ import 'package:clothes_shop_app/constants.dart';
 import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:clothes_shop_app/core/utils/styles.dart';
 import 'package:clothes_shop_app/core/widgets/custom_button.dart';
-import 'package:clothes_shop_app/core/widgets/custom_input.dart';
-import 'package:clothes_shop_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_pinput.dart';
@@ -39,12 +37,21 @@ class VerificationViewBody extends StatelessWidget {
             const SizedBox(
               height: 32,
             ),
-            CustomPinput(),
+            const CustomPinput(),
             const SizedBox(
               height: 32,
             ),
             CustomButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  AppRouter.router(
+                    const RouteSettings(
+                      name: AppRouter.kForgotPasswordView,
+                    ),
+                  ),
+                );
+              },
               title: 'Verify',
             ),
           ],
