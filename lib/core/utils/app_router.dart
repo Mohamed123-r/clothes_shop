@@ -9,6 +9,8 @@ import 'package:clothes_shop_app/features/search/presentation/view/search_view.d
 import 'package:flutter/material.dart';
 import '../../features/authentication/login/presentation/view/forgot_password_view.dart';
 import '../../features/authentication/login/presentation/view/verification_view.dart';
+import '../../features/categories/presentation/view/categories_details_view.dart';
+import '../../features/categories/presentation/view/categories_view.dart';
 import '../../features/onboarding/presentation/view/onboarding_view.dart';
 import '../../features/splash/presentation/view/splash_view.dart';
 import '../widgets/custom_bottom_navigation_bar.dart';
@@ -24,6 +26,8 @@ abstract class AppRouter {
   static const kSignUpView = '/signup';
   static const kBottomNavigationBar = '/bottomNavigationBar';
   static const kHomeView = '/home';
+  static const kCategoriesView = '/categories';
+  static const kCategoriesDetailsView = '/categoriesDetails';
   static const kProductDetailsView = '/productDetails';
   static const kSearchView = '/Search';
   static const kAccountView = '/account';
@@ -80,6 +84,16 @@ abstract class AppRouter {
       case kHomeView:
         return MaterialPageRoute(builder: (context) {
           return const HomeView();
+        });
+
+      case kCategoriesView:
+        return MaterialPageRoute(builder: (context) {
+          return const CategoriesView();
+        });
+
+      case kCategoriesDetailsView:
+        return MaterialPageRoute(builder: (context) {
+          return const CategoriesDetailsView();
         });
 
       case kProductDetailsView:
