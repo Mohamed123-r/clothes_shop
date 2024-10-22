@@ -40,26 +40,29 @@ class CustomButton extends StatelessWidget {
 }
 
 class SecondCustomButton extends StatelessWidget {
-  const SecondCustomButton(
-      {super.key,
-      this.isMinWidth = false,
-      required this.onPressed,
-      required this.title,
-      required this.child});
+  const SecondCustomButton({
+    super.key,
+    this.isMinWidth = false,
+    required this.onPressed,
+    required this.title,
+    required this.child,
+    this.color = kBlackColor,
+  });
 
   final bool isMinWidth;
   final void Function() onPressed;
   final String title;
   final Widget child;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       height: 48,
       minWidth: isMinWidth
-          ? (MediaQuery.of(context).size.width / 2) - 16
+          ? (MediaQuery.of(context).size.width / 2) - 32
           : double.infinity,
-      color: kBlackColor,
+      color: color,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
