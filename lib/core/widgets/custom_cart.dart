@@ -1,4 +1,5 @@
 import 'package:clothes_shop_app/core/utils/app_router.dart';
+import 'package:clothes_shop_app/core/widgets/custom_love.dart';
 import 'package:flutter/material.dart';
 import '../../constants.dart';
 import '../utils/styles.dart';
@@ -51,7 +52,16 @@ class CustomCart extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(image, width: 160, height: 150, fit: BoxFit.cover),
+            Stack(
+              children: [
+                Image.asset(image, width: 160, height: 150, fit: BoxFit.cover),
+                const Positioned(
+                  top: 10,
+                  right: 10,
+                  child: CustomLove(),
+                ),
+              ],
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Column(
