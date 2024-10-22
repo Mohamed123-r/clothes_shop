@@ -5,7 +5,7 @@ import '../../../../core/utils/styles.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../generated/assets.dart';
 import 'widgets/account_section_from_account_details.dart';
-import 'widgets/custom_item_from_account_details.dart';
+import 'widgets/custom_item_from_edit_ and_account_details.dart';
 
 class AccountDetailsView extends StatelessWidget {
   const AccountDetailsView({super.key});
@@ -22,35 +22,35 @@ class AccountDetailsView extends StatelessWidget {
             SizedBox(
               height: 32,
             ),
-            CustomItemFromAccountDetails(
+            CustomItemFromEditAndAccountDetails(
               title: 'User Name',
               value: 'Mohamed Attalla',
             ),
             SizedBox(
               height: 32,
             ),
-            CustomItemFromAccountDetails(
+            CustomItemFromEditAndAccountDetails(
               title: 'Email',
               value: 'Mexoattlla123@gmail.com',
             ),
             SizedBox(
               height: 32,
             ),
-            CustomItemFromAccountDetails(
+            CustomItemFromEditAndAccountDetails(
               title: 'Phone Number',
               value: '01000000000',
             ),
             SizedBox(
               height: 32,
             ),
-            CustomItemFromAccountDetails(
+            CustomItemFromEditAndAccountDetails(
               title: 'Gender',
               value: 'Male',
             ),
             SizedBox(
               height: 32,
             ),
-            CustomItemFromAccountDetails(
+            CustomItemFromEditAndAccountDetails(
               title: 'Location',
               value: 'Shoag "العاصمة"',
             ),

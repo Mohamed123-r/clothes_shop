@@ -3,16 +3,18 @@ import 'package:flutter/material.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
 
-class CustomItemFromAccountDetails extends StatelessWidget {
-  const CustomItemFromAccountDetails({
+class CustomItemFromEditAndAccountDetails extends StatelessWidget {
+  const CustomItemFromEditAndAccountDetails({
     super.key,
     required this.title,
     required this.value,
+    this.isEdit = false,
   });
 
   final String title;
 
   final String value;
+  final bool isEdit;
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +26,10 @@ class CustomItemFromAccountDetails extends StatelessWidget {
           style: Styles.subTitle1Bold,
         ),
         TextField(
-          readOnly: true,
+          readOnly: !isEdit ,
           decoration: InputDecoration(
-            // contentPadding: EdgeInsets.symmetric(vertical: 0.0),
-              hintText:value,
+              // contentPadding: EdgeInsets.symmetric(vertical: 0.0),
+              hintText: value,
               isDense: true,
               contentPadding: const EdgeInsets.symmetric(vertical: 5.0),
               hintStyle: Styles.bodyText1Regular.copyWith(
