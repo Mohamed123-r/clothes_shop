@@ -21,6 +21,9 @@ class CategoriesSection extends StatelessWidget {
             'Categories',
             style: Styles.heading3Bold.copyWith(color: kDarkGreyColor),
           ),
+          const SizedBox(
+            height: 8,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -46,7 +49,7 @@ class CategoriesSection extends StatelessWidget {
                       ),
                     );
                   },
-                  child: CategoriesItem(
+                  child: const CategoriesItem(
                     title: 'Men',
                   ),
                 ),
@@ -62,7 +65,7 @@ class CategoriesSection extends StatelessWidget {
                     ),
                   );
                 },
-                child: CategoriesItem(
+                child: const CategoriesItem(
                   title: 'Woman',
                 ),
               ),
@@ -77,7 +80,7 @@ class CategoriesSection extends StatelessWidget {
                     ),
                   );
                 },
-                child: CategoriesItem(
+                child: const CategoriesItem(
                   title: 'Kids',
                 ),
               ),
@@ -92,7 +95,7 @@ class CategoriesSection extends StatelessWidget {
                     ),
                   );
                 },
-                child: CategoriesItem(
+                child: const CategoriesItem(
                   title: 'New Arrival',
                 ),
               ),

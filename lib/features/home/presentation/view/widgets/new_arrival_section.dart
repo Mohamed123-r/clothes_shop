@@ -32,6 +32,9 @@ class NewArrivalSection extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(
+            height: 12,
+          ),
           GridView.count(
             padding: EdgeInsets.zero,
             crossAxisCount: 2,

@@ -56,6 +56,9 @@ class HomeViewBody extends StatelessWidget {
                       children: [
                         OffersSection(),
                         CategoriesSection(),
+                        SizedBox(
+                          height: 16,
+                        ),
                         NewArrivalSection(),
                         SizedBox(
                           height: 16,
