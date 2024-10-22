@@ -1,4 +1,5 @@
 import 'package:clothes_shop_app/constants.dart';
+import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:clothes_shop_app/core/utils/styles.dart';
 import 'package:clothes_shop_app/generated/assets.dart';
 import 'package:flutter/material.dart';
@@ -32,15 +33,23 @@ class AccountSection extends StatelessWidget {
               ),
               Text(
                 'Mexoattlla123@gmail.com',
-                style: Styles.caption1Regular
-                    .copyWith(color: kDarkGreyColor),
+                style: Styles.caption1Regular.copyWith(color: kDarkGreyColor),
               ),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      AppRouter.router(
+                        const RouteSettings(
+                          name: AppRouter.kEditProfile,
+                        ),
+                      ),
+                    );
+                  },
                   child: Text(
                     'EDIT PROFILE',
-                    style: Styles.caption2Regular
-                        .copyWith(color: kDarkGreyColor),
+                    style:
+                        Styles.caption2Regular.copyWith(color: kDarkGreyColor),
                   ))
             ],
           )

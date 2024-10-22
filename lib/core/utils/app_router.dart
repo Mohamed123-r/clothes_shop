@@ -6,6 +6,7 @@ import 'package:clothes_shop_app/features/home/presentation/view/home_view.dart'
 import 'package:clothes_shop_app/features/productDetails/presentation/view/product_details_view.dart';
 import 'package:clothes_shop_app/features/onboarding/presentation/view/start_view.dart';
 import 'package:clothes_shop_app/features/profile/presentation/view/account_details_view.dart';
+import 'package:clothes_shop_app/features/profile/presentation/view/edit_profile_view.dart';
 import 'package:clothes_shop_app/features/search/presentation/view/search_view.dart';
 import 'package:flutter/material.dart';
 import '../../features/authentication/login/presentation/view/forgot_password_view.dart';
@@ -33,6 +34,7 @@ abstract class AppRouter {
   static const kSearchView = '/Search';
   static const kAccountView = '/account';
   static const kAccountDerailsView = '/accountDetails';
+  static const kEditProfile = '/editProfile';
   static const kCartView = '/cart';
   static const kFavoriteView = '/favorite';
 
@@ -106,6 +108,11 @@ abstract class AppRouter {
       case kProductDetailsView:
         return MaterialPageRoute(builder: (context) {
           return const ProductDetailsView();
+        });
+
+      case kEditProfile:
+        return MaterialPageRoute(builder: (context) {
+          return const EditProfileView();
         });
 
       case kSearchView:
