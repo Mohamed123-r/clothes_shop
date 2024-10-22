@@ -1,4 +1,5 @@
 import 'package:clothes_shop_app/constants.dart';
+import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 
 import 'account_list_tile_item.dart';
@@ -12,7 +13,7 @@ class ListViewSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(16),
-      decoration:BoxDecoration(
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         color: kWhiteColor,
         border: Border.all(color: kLightGreyColor),
@@ -25,99 +26,109 @@ class ListViewSection extends StatelessWidget {
           ),
         ],
       ),
-      child: const Column(
+      child: Column(
         children: [
-          AccountListTileItem(
-            title: 'Account details',
-            icon: Icons.list_alt,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                AppRouter.router(
+                  const RouteSettings(name: AppRouter.kAccountDerailsView),
+                ),
+              );
+            },
+            child: const AccountListTileItem(
+              title: 'Account details',
+              icon: Icons.list_alt,
+            ),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: Divider(
               height: 0,
             ),
           ),
-          AccountListTileItem(
+          const AccountListTileItem(
             title: 'Favorite',
             icon: Icons.favorite_border,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: Divider(
               height: 0,
             ),
           ),
-          AccountListTileItem(
+          const AccountListTileItem(
             title: 'Notification',
             icon: Icons.notifications_none,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: Divider(
               height: 0,
             ),
           ),
-          AccountListTileItem(
+          const AccountListTileItem(
             title: 'Payment',
             icon: Icons.payment_outlined,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: Divider(
               height: 0,
             ),
           ),
-          AccountListTileItem(
+          const AccountListTileItem(
             title: 'My Orders',
             icon: Icons.card_travel,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: Divider(
               height: 0,
             ),
           ),
-          AccountListTileItem(
+          const AccountListTileItem(
             title: 'Setting',
             icon: Icons.settings,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: Divider(
               height: 0,
             ),
           ),
-          AccountListTileItem(
+          const AccountListTileItem(
             title: 'Privacy Policy',
             icon: Icons.policy,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: Divider(
               height: 0,
             ),
           ),
-          AccountListTileItem(
+          const AccountListTileItem(
             title: 'Frequently Asked Questions',
             icon: Icons.quiz_outlined,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: Divider(
               height: 0,
             ),
           ),
-          AccountListTileItem(
+          const AccountListTileItem(
             title: 'Legal Information',
             icon: Icons.list_alt,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: Divider(
               height: 0,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           )
         ],
@@ -125,4 +136,3 @@ class ListViewSection extends StatelessWidget {
     );
   }
 }
-

@@ -5,6 +5,7 @@ import 'package:clothes_shop_app/features/favorite/presentation/view/my_favorite
 import 'package:clothes_shop_app/features/home/presentation/view/home_view.dart';
 import 'package:clothes_shop_app/features/productDetails/presentation/view/product_details_view.dart';
 import 'package:clothes_shop_app/features/onboarding/presentation/view/start_view.dart';
+import 'package:clothes_shop_app/features/profile/presentation/view/account_details_view.dart';
 import 'package:clothes_shop_app/features/search/presentation/view/search_view.dart';
 import 'package:flutter/material.dart';
 import '../../features/authentication/login/presentation/view/forgot_password_view.dart';
@@ -31,6 +32,7 @@ abstract class AppRouter {
   static const kProductDetailsView = '/productDetails';
   static const kSearchView = '/Search';
   static const kAccountView = '/account';
+  static const kAccountDerailsView = '/accountDetails';
   static const kCartView = '/cart';
   static const kFavoriteView = '/favorite';
 
@@ -84,6 +86,11 @@ abstract class AppRouter {
       case kHomeView:
         return MaterialPageRoute(builder: (context) {
           return const HomeView();
+        });
+
+      case kAccountDerailsView:
+        return MaterialPageRoute(builder: (context) {
+          return const AccountDetailsView();
         });
 
       case kCategoriesView:
