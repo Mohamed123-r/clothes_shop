@@ -1,8 +1,11 @@
 import 'package:clothes_shop_app/features/splash/presentation/view/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'core/database/cache/cache_helper.dart';
+import 'core/function_help/get_it.dart';
+import 'core/services/bloc_opesever.dart';
 
 Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(
@@ -14,6 +17,12 @@ Future<void> main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper().init();
+
+
+  Bloc.observer = CustomBlocObserver();
+  setupGetIt();
+
+
   runApp(const MyApp());
 }
 
