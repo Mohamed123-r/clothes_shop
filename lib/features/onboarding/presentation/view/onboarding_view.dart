@@ -1,3 +1,4 @@
+import 'package:clothes_shop_app/core/database/cache/cache_helper.dart';
 import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:clothes_shop_app/core/widgets/custom_button.dart';
 import 'package:clothes_shop_app/features/onboarding/presentation/view/widgets/onboarding_bottom_navigation_bar.dart';
@@ -106,6 +107,8 @@ class _OnboardingViewState extends State<OnboardingView>
                         const RouteSettings(name: AppRouter.kStartView),
                       ),
                     );
+                    CacheHelper.sharedPreferences
+                        .setBool('onBoarding', true);
                   }
                   _controller?.animateTo(_selectedIndex += 1);
                   setState(
