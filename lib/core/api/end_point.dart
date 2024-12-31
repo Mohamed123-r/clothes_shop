@@ -1,5 +1,5 @@
 class EndPoint {
-  static String baseUrl = "";
+  static String baseUrlAuth = "http://ethiqclothes.runasp.net/api/Account/";
 
 }
 
