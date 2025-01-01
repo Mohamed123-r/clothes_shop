@@ -58,29 +58,26 @@ class StartViewBody extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Already have an account?",
+                "Already have an account? ",
                 style: Styles.bodyText1Regular.copyWith(
                   color: kDarkGreyColor,
                 ),
               ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    AppRouter.router(
-                      const RouteSettings(
-                        name: AppRouter.kLogInView,
-                      ),
-                    ),
-                  );
-                },
-                child: Text(
-                  "LOGIN",
-                  style: Styles.textButton.copyWith(
-                    color: kBlackColor,
-                    decoration: TextDecoration.underline,
-                  ),
+              TextButton(
+                 onPressed: () {   Navigator.push(
+                   context,
+                   AppRouter.router(
+                     const RouteSettings(
+                       name: AppRouter.kLogInView,
+                     ),
+                   ),
+                 ); }, child: Text(
+                "LOGIN",
+                style: Styles.subTitle2Bold.copyWith(
+                  color: kBlackColor,
+                  decoration: TextDecoration.underline,
                 ),
+              ),
               ),
             ],
           ),
