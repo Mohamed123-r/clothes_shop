@@ -1,3 +1,4 @@
+import 'package:clothes_shop_app/core/database/cache/cache_helper.dart';
 import 'package:clothes_shop_app/core/function_help/custom_error.dart';
 import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:clothes_shop_app/core/widgets/custom_progress_hud.dart';
@@ -5,6 +6,7 @@ import 'package:clothes_shop_app/features/authentication/login/presentation/mana
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../../constants.dart';
 import 'log_in_view_body.dart';
 
 class LogInViewBodyBlocBuilder extends StatelessWidget {
@@ -25,8 +27,10 @@ class LogInViewBodyBlocBuilder extends StatelessWidget {
               ),
             ),
             (route) => false,
-          );
 
+          );
+          CacheHelper.sharedPreferences
+              .setBool( sharedPrefLogInSuccess, true);
         } else if (state is LoginFailure) {
           customError(context, massage: state.message);
         }

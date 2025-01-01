@@ -9,3 +9,5 @@ const kLightGreyColor = Color(0xFFE7EAED);
 const kGreyColor = Color(0xFFA0A5AB);
 const kVeryLightGreyColor = Color(0xFFF7F7F7);
 var logger = Logger();
+const String sharedPrefOnBoardingImage =  'OnBoarding';
+const String sharedPrefLogInSuccess = 'LogInSuccess';

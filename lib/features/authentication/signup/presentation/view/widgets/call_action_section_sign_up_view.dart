@@ -30,7 +30,7 @@ class CallActionSectionSignUpView extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   AppRouter.router(
                     const RouteSettings(

@@ -11,8 +11,10 @@ import '../../../../../generated/assets.dart';
 class SplashViewBody extends StatelessWidget {
   SplashViewBody({super.key});
 
-  final bool onBoarding = CacheHelper().getData(key: "onBoarding") ?? false;
-  final bool logInSuccess = CacheHelper().getData(key: "logInSuccess") ?? false;
+  final bool onBoarding =
+      CacheHelper().getData(key: sharedPrefOnBoardingImage) ?? false;
+  final bool logInSuccess =
+      CacheHelper().getData(key: sharedPrefLogInSuccess) ?? false;
 
   @override
   Widget build(BuildContext context) {
