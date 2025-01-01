@@ -40,7 +40,7 @@ class LogInViewBody extends StatelessWidget {
             const SizedBox(
               height: 32,
             ),
-            const CallActionSectionFromLogInView(),
+            const CallActionSectionFromLogInView(email: 'sharawy@gmail.com', password: 'Passw0rd1122##',),
           ],
         ),
       ),
