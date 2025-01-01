@@ -4,12 +4,19 @@ import 'package:clothes_shop_app/core/utils/styles.dart';
 import 'package:clothes_shop_app/core/widgets/custom_button.dart';
 import 'package:clothes_shop_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../../manage/cubits/login_cubit.dart';
 
 class CallActionSectionFromLogInView extends StatelessWidget {
   const CallActionSectionFromLogInView({
     super.key,
+    required this.email,
+    required this.password,
   });
+
+  final String email, password;
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +24,7 @@ class CallActionSectionFromLogInView extends StatelessWidget {
       children: [
         CustomButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              AppRouter.router(
-                const RouteSettings(
-                  name: AppRouter.kBottomNavigationBar,
-                ),
-              ),
-            );
+            context.read<LoginCubit>().login(email, password);
           },
           title: 'LOGIN',
         ),

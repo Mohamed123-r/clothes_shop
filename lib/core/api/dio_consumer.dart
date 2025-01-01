@@ -1,5 +1,6 @@
 import 'package:clothes_shop_app/core/error/exceptions.dart';
 import 'package:dio/dio.dart';
+import '../../constants.dart';
 import 'api_consumer.dart';
 import 'api_interceptor.dart';
 import 'end_point.dart';
@@ -34,7 +35,17 @@ class DioConsumer extends ApiConsumer {
 
       return response.data;
     } on DioException catch (e) {
-      ServerFailure(e.toString());
+      logger.e(
+          "Exception in  api :$e");
+      if (e.type == DioExceptionType.badResponse) {
+        throw CustomException(message: e.response!.data);
+      }
+
+    } catch (e) {
+      logger.e(
+          "Exception in  firebaseAuthService.createUserWithEmailAndPassword :$e");
+
+      throw CustomException(message: e.toString());
     }
   }
 
@@ -51,7 +62,17 @@ class DioConsumer extends ApiConsumer {
       );
       return response.data;
     } on DioException catch (e) {
-      ServerFailure(e.toString());
+
+      if (e.type == DioExceptionType.badResponse) { logger.e(
+          "Exception in  api :$e");
+        throw CustomException(message: e.response!.data);
+      } else {
+           logger.e(
+            "Exception in  firebaseAuthService.createUserWithEmailAndPassword :$e");
+
+            throw CustomException(message: e.toString());
+      }
+
     }
   }
 
@@ -68,7 +89,17 @@ class DioConsumer extends ApiConsumer {
       );
       return response.data;
     } on DioException catch (e) {
-      ServerFailure(e.toString());
+      logger.e(
+          "Exception in  api :$e");
+      if (e.type == DioExceptionType.badResponse) {
+        throw CustomException(message: e.response!.data);
+      }
+
+    } catch (e) {
+      logger.e(
+          "Exception in  firebaseAuthService.createUserWithEmailAndPassword :$e");
+
+      throw CustomException(message: e.toString());
     }
   }
 
@@ -85,7 +116,17 @@ class DioConsumer extends ApiConsumer {
       );
       return response.data;
     } on DioException catch (e) {
-      ServerFailure(e.toString());
+
+      if (e.type == DioExceptionType.badResponse) { logger.e(
+          "Exception in  api :$e");
+      throw CustomException(message: e.response!.data);
+      } else {
+        logger.e(
+            "Exception in  firebaseAuthService.createUserWithEmailAndPassword :$e");
+
+        throw CustomException(message: e.toString());
+      }
+
     }
   }
 
@@ -102,7 +143,17 @@ class DioConsumer extends ApiConsumer {
       );
       return response.data;
     } on DioException catch (e) {
-      ServerFailure(e.toString());
+      logger.e(
+          "Exception in  api :$e");
+      if (e.type == DioExceptionType.badResponse) {
+        throw CustomException(message: e.response!.data);
+      }
+
+    } catch (e) {
+      logger.e(
+          "Exception in  firebaseAuthService.createUserWithEmailAndPassword :$e");
+
+      throw CustomException(message: e.toString());
     }
   }
 }
