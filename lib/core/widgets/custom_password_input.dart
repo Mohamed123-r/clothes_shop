@@ -5,10 +5,11 @@ import '../../generated/assets.dart';
 
 class CustomPasswordInput extends StatefulWidget {
   const CustomPasswordInput(
-      {super.key, required this.hintText, required this.labelText});
+      {super.key, required this.hintText, required this.labelText, this.onSaved});
 
   final String hintText;
   final String labelText;
+  final void Function(String?)? onSaved;
 
   @override
   State<CustomPasswordInput> createState() => _CustomPasswordInputState();
@@ -20,8 +21,11 @@ class _CustomPasswordInputState extends State<CustomPasswordInput> {
   @override
   Widget build(BuildContext context) {
     return CustomInput(
+      obscureText: _obscureText,
+      onSaved: widget.onSaved,
       hintText: widget.hintText,
       labelText: widget.labelText,
+
       prefixIcon: Assets.imagesPasswordIcon,
       suffixIcon: IconButton(
         onPressed: () {

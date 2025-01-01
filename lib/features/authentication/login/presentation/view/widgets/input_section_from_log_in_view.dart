@@ -5,22 +5,25 @@ import 'package:flutter/material.dart';
 
 class InputSectionFromLogInView extends StatelessWidget {
   const InputSectionFromLogInView({
-    super.key,
+    super.key, this.onSavedToEmail, this.onSavedToPassword,
   });
-
+  final void Function(String?)? onSavedToEmail;
+  final void Function(String?)? onSavedToPassword;
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return  Column(
       children: [
         CustomInput(
           hintText: 'Enter your email',
           labelText: 'Email',
           prefixIcon: Assets.imagesEmailIcon,
+          onSaved:onSavedToEmail ,
         ),
-        SizedBox(
+        const SizedBox(
           height: 24,
         ),
         CustomPasswordInput(
+          onSaved: onSavedToPassword,
           hintText: 'Enter your password',
           labelText: 'Password',
         ),

@@ -11,21 +11,19 @@ import '../../manage/cubits/login_cubit.dart';
 
 class CallActionSectionFromLogInView extends StatelessWidget {
   const CallActionSectionFromLogInView({
-    super.key,
-    required this.email,
-    required this.password,
+    super.key, required this.onPressed,
+
   });
 
-  final String email, password;
+
+  final Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         CustomButton(
-          onPressed: () {
-            context.read<LoginCubit>().login(email, password);
-          },
+          onPressed: onPressed,
           title: 'LOGIN',
         ),
         Row(

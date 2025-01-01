@@ -11,17 +11,27 @@ class CustomInput extends StatelessWidget {
       required this.hintText,
       required this.labelText,
       required this.prefixIcon,
-      this.suffixIcon});
+      this.suffixIcon, this.onSaved, this.obscureText});
 
   final String hintText;
   final String labelText;
   final String prefixIcon;
 
   final Widget? suffixIcon;
+  final void Function(String?)? onSaved;
+  final bool? obscureText;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: obscureText ?? false,
+      onSaved:onSaved ,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'The field is required';
+        }
+        return null;
+      },
       cursorColor: kGreyColor,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
