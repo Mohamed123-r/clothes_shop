@@ -1,7 +1,7 @@
-
 import 'package:clothes_shop_app/constants.dart';
 import 'package:clothes_shop_app/core/api/dio_consumer.dart';
 import 'package:clothes_shop_app/core/api/end_point.dart';
+import 'package:clothes_shop_app/core/database/cache/cache_helper.dart';
 import 'package:clothes_shop_app/core/error/exceptions.dart';
 import 'package:clothes_shop_app/features/authentication/data/models/user_model.dart';
 import 'package:clothes_shop_app/features/authentication/domain/repos/aoth_repo.dart';
@@ -27,6 +27,10 @@ class AuthRepoImpl extends AuthRepo {
           "password": password,
         },
       );
+      CacheHelper.sharedPreferences
+          .setString(sharedPrefUserToken, response["token"]);
+      CacheHelper.sharedPreferences
+          .setString(sharedPrefUserEmail, response["email"]);
 
       return Right(response);
     } on CustomException catch (e) {
