@@ -17,6 +17,7 @@ class SplashViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return EasySplashScreen(
+      backgroundColor: kVeryLightGreyColor,
       logo: Image.asset(
         Assets.imagesSplashImage,
         width: 240,
