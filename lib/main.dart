@@ -37,6 +37,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
          scaffoldBackgroundColor: kVeryLightGreyColor,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: kVeryLightGreyColor,
+          surfaceTintColor: kGreyColor,
+        )
       ) ,
       home: const SplashView(),
     );

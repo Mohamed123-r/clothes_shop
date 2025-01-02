@@ -15,3 +15,4 @@ const String sharedPrefOnBoardingImage = 'OnBoarding';
 const String sharedPrefLogInSuccess = 'LogInSuccess';
 const String sharedPrefUserToken = 'UserToken';
 const String sharedPrefUserEmail = 'UserEmail';
+const String sharedPrefUserUser = 'UserUser';
