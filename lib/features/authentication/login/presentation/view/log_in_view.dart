@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/function_help/get_it.dart';
-import '../../../domain/repos/aoth_repo.dart';
+import '../../../domain/repos/auth_repo.dart';
 import 'widgets/log_in_view_body_bloc_builder.dart';
 
 class LogInView extends StatelessWidget {

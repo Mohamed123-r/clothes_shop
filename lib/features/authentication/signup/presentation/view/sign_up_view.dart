@@ -1,5 +1,5 @@
 import 'package:clothes_shop_app/core/function_help/get_it.dart';
-import 'package:clothes_shop_app/features/authentication/domain/repos/aoth_repo.dart';
+import 'package:clothes_shop_app/features/authentication/domain/repos/auth_repo.dart';
 import 'package:clothes_shop_app/features/authentication/signup/presentation/manage/cubits/sign_up_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

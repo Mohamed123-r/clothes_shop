@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:clothes_shop_app/features/authentication/domain/repos/aoth_repo.dart';
+import 'package:clothes_shop_app/features/authentication/domain/repos/auth_repo.dart';
 import 'package:meta/meta.dart';
 
 part 'sign_up_state.dart';
