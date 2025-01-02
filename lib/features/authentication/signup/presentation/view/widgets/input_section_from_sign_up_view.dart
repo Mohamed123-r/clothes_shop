@@ -6,51 +6,73 @@ import 'package:flutter/material.dart';
 class InputSectionFromSignUpView extends StatelessWidget {
   const InputSectionFromSignUpView({
     super.key,
+    required this.onSavedToName,
+    required this.onSavedToEmail,
+    required this.onSavedToPassword,
+    required this.onSavedToConfirmPassword,
+    required this.onSavedToPhoneNumber,
+    required this.onSavedToLocation,
   });
+
+  final Function(String?) onSavedToName,
+      onSavedToEmail,
+      onSavedToPassword,
+      onSavedToConfirmPassword,
+      onSavedToPhoneNumber,
+      onSavedToLocation;
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         CustomInput(
-          hintText: 'Enter your email',
-          labelText: 'Email',
-          prefixIcon: Assets.imagesEmailIcon,
-        ),
-        SizedBox(
-          height: 12,
-        ),
-        CustomInput(
+          onSaved: onSavedToName,
+          keyboardType: TextInputType.name,
           hintText: 'Enter your name',
           labelText: 'Username',
           prefixIcon: Assets.imagesPersonIcon,
         ),
-        SizedBox(
-          height: 12,
-        ),
-        CustomPasswordInput(
-          hintText: 'Enter your password',
-          labelText: 'Password',
-        ),
-        SizedBox(
-          height: 12,
-        ),
-        CustomPasswordInput(
-          hintText: 'Enter your password',
-          labelText: 'Confirm Password',
-        ),
-        SizedBox(
+        const SizedBox(
           height: 12,
         ),
         CustomInput(
+          onSaved: onSavedToEmail,
+          keyboardType: TextInputType.emailAddress,
+          hintText: 'Enter your email',
+          labelText: 'Email',
+          prefixIcon: Assets.imagesEmailIcon,
+        ),
+        const SizedBox(
+          height: 12,
+        ),
+        CustomPasswordInput(
+          onSaved: onSavedToPassword,
+          hintText: 'Enter your password',
+          labelText: 'Password',
+        ),
+        const SizedBox(
+          height: 12,
+        ),
+        CustomPasswordInput(
+          onSaved: onSavedToConfirmPassword,
+          hintText: 'Enter your password',
+          labelText: 'Confirm Password',
+        ),
+        const SizedBox(
+          height: 12,
+        ),
+        CustomInput(
+          keyboardType: TextInputType.number,
+          onSaved: onSavedToPhoneNumber,
           hintText: 'Enter your Phone Number',
           labelText: 'Phone Number',
           prefixIcon: Assets.imagesPhoneIcon,
         ),
-        SizedBox(
+        const SizedBox(
           height: 12,
         ),
         CustomInput(
+          onSaved: onSavedToLocation,
           hintText: 'Enter your Location',
           labelText: 'Location',
           prefixIcon: Assets.imagesLocationIcons,

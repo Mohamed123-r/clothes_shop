@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 enum Gender { male, female }
 
 class GenderSectionFromSignUpView extends StatefulWidget {
-  const GenderSectionFromSignUpView({super.key});
+  const GenderSectionFromSignUpView({super.key, required this.onSelected});
+
+  final Function(String) onSelected;
 
   @override
   State<GenderSectionFromSignUpView> createState() => _SignUpViewState();
@@ -42,6 +44,7 @@ class _SignUpViewState extends State<GenderSectionFromSignUpView> {
                 onChanged: (Gender? value) {
                   setState(() {
                     _selectedGender = value;
+                    widget.onSelected("male");
                   });
                 },
               ),
@@ -61,6 +64,7 @@ class _SignUpViewState extends State<GenderSectionFromSignUpView> {
                 onChanged: (Gender? value) {
                   setState(() {
                     _selectedGender = value;
+                    widget.onSelected("female");
                   });
                 },
               ),
