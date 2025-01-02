@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../../constants.dart';
-import '../../generated/assets.dart';
 import '../utils/styles.dart';
 
 class CustomInput extends StatelessWidget {
@@ -11,7 +9,11 @@ class CustomInput extends StatelessWidget {
       required this.hintText,
       required this.labelText,
       required this.prefixIcon,
-      this.suffixIcon, this.onSaved, this.obscureText});
+      this.suffixIcon,
+      this.onSaved,
+      this.obscureText,
+      this.validator,
+      this.keyboardType});
 
   final String hintText;
   final String labelText;
@@ -20,18 +22,22 @@ class CustomInput extends StatelessWidget {
   final Widget? suffixIcon;
   final void Function(String?)? onSaved;
   final bool? obscureText;
+  final String? Function(String?)? validator;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       obscureText: obscureText ?? false,
-      onSaved:onSaved ,
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return 'The field is required';
-        }
-        return null;
-      },
+      keyboardType: keyboardType ?? TextInputType.text,
+      onSaved: onSaved,
+      validator: validator ??
+          (value) {
+            if (value == null || value.isEmpty) {
+              return 'Field is required';
+            }
+            return null;
+          },
       cursorColor: kGreyColor,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
