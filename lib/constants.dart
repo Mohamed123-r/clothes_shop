@@ -3,7 +3,7 @@ import 'package:logger/logger.dart';
 
 var logger = Logger();
 
-const kFontColor = Color(0xFF000000);
+const kFontColor = Color(0xFF031222);
 const kDarkGreyColor = Color(0xFF50565C);
 const kBlackColor = Color(0xFF1C1B1B);
 const kWhiteColor = Color(0xFFFFFFFF);
