@@ -10,18 +10,19 @@ import '../../features/home/data/repos_impl/home_repo_impl.dart';
 final getIt = GetIt.instance;
 
 void setupGetIt() {
+  getIt.registerSingleton<DioConsumer>(
+    DioConsumer(
+      dio: Dio(),
+    ),
+  );
   getIt.registerSingleton<AuthRepo>(
     AuthRepoImpl(
-      dioConsumer: DioConsumer(
-        dio: Dio(),
-      ),
+      dioConsumer: getIt.get<DioConsumer>(),
     ),
   );
   getIt.registerSingleton<HomeRepo>(
     HomeRepoImpl(
-      dioConsumer: DioConsumer(
-        dio: Dio(),
-      ),
+      dioConsumer: getIt.get<DioConsumer>(),
     ),
   );
 }

@@ -4,13 +4,27 @@ import 'package:clothes_shop_app/core/widgets/custom_search.dart';
 import 'package:clothes_shop_app/features/home/presentation/view/widgets/sliver_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../manage/cubits/product_cubit.dart';
 import 'categories_section.dart';
-import 'new_arrival_section.dart';
+
+import 'new_arrival_section_bloc_consumer.dart';
 import 'offers_section.dart';
 
-class HomeViewBody extends StatelessWidget {
+class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
 
+  @override
+  State<HomeViewBody> createState() => _HomeViewBodyState();
+}
+
+class _HomeViewBodyState extends State<HomeViewBody> {
+  @override
+  void initState() {
+    context.read<ProductCubit>().fetchGetAllProducts();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -30,7 +44,7 @@ class HomeViewBody extends StatelessWidget {
               children: [
                 Container(
                   padding:
-                      const EdgeInsets.only(bottom: 16, right: 16, left: 16),
+                  const EdgeInsets.only(bottom: 16, right: 16, left: 16),
                   decoration: const BoxDecoration(
                       color: kFontColor,
                       borderRadius: BorderRadius.only(
@@ -50,7 +64,7 @@ class HomeViewBody extends StatelessWidget {
                     },
                   ),
                 ),
-                const Expanded(
+                 const Expanded(
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
@@ -59,7 +73,7 @@ class HomeViewBody extends StatelessWidget {
                         SizedBox(
                           height: 16,
                         ),
-                        NewArrivalSection(),
+                        NewArrivalSectionBlocConsumer(),
                         SizedBox(
                           height: 16,
                         ),
@@ -75,3 +89,5 @@ class HomeViewBody extends StatelessWidget {
     );
   }
 }
+
+

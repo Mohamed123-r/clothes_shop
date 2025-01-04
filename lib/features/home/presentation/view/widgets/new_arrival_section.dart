@@ -1,13 +1,16 @@
 import 'package:clothes_shop_app/constants.dart';
 import 'package:clothes_shop_app/core/utils/styles.dart';
 import 'package:clothes_shop_app/core/widgets/custom_cart.dart';
+import 'package:clothes_shop_app/features/home/domain/entities/product_entity.dart';
 import 'package:clothes_shop_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 
+
 class NewArrivalSection extends StatelessWidget {
   const NewArrivalSection({
-    super.key,
+    super.key, required this.products,
   });
+final List<ProductEntity> products;
 
   @override
   Widget build(BuildContext context) {
@@ -44,12 +47,12 @@ class NewArrivalSection extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             children: List.generate(
-              20,
+              products.length,
                   (index) {
-                return const CustomCart(
-                  title: 'Muslim Tops Loose',
-                  subTitle: 'Isdal',
-                  price: '1500EG',
+                return  CustomCart(
+                  title: products[index].name,
+                  subTitle: products[index].subCategory,
+                  price: products[index].price.toString(),
                   image: Assets.imagesTest,
                 );
               },

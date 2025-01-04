@@ -1,11 +1,15 @@
 import 'package:clothes_shop_app/features/cart/presentation/view/my_cart_view.dart';
 import 'package:clothes_shop_app/features/categories/presentation/view/categories_view.dart';
+import 'package:clothes_shop_app/features/home/presentation/manage/cubits/product_cubit.dart';
 import 'package:clothes_shop_app/features/home/presentation/view/home_view.dart';
 import 'package:clothes_shop_app/features/profile/presentation/view/account_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../constants.dart';
+import '../../features/home/domain/repos/home_repo.dart';
 import '../../generated/assets.dart';
+import '../function_help/get_it.dart';
 import '../utils/styles.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
@@ -71,7 +75,12 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               ),
             ]),
         body: <Widget>[
-          const HomeView(),
+          MultiBlocProvider(providers: [
+            BlocProvider(
+                create: (context) => ProductCubit(
+                      getIt.get<HomeRepo>(),
+                    )),
+          ], child: const HomeView()),
           const CategoriesView(),
           const MyCartView(),
           const AccountView(),
