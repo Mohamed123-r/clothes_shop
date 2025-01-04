@@ -14,6 +14,10 @@ class InputSectionFromLogInView extends StatelessWidget {
     return  Column(
       children: [
         CustomInput(
+          validator: (value)
+          {
+
+          },
           hintText: 'Enter your email',
           labelText: 'Email',
           prefixIcon: Assets.imagesEmailIcon,
