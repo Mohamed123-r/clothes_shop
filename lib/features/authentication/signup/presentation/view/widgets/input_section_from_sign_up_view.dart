@@ -41,6 +41,18 @@ class InputSectionFromSignUpView extends StatelessWidget {
           hintText: 'Enter your email',
           labelText: 'Email',
           prefixIcon: Assets.imagesEmailIcon,
+          validator: (value) {
+            if (value!.isEmpty) {
+              return 'Email is required';
+            }
+            if (!value.contains('@')) {
+              return 'Enter valid email';
+            }
+            if (!value.endsWith('.com')) {
+              return 'Enter valid email';
+            }
+            return null;
+          },
         ),
         const SizedBox(
           height: 12,
@@ -67,6 +79,15 @@ class InputSectionFromSignUpView extends StatelessWidget {
           hintText: 'Enter your Phone Number',
           labelText: 'Phone Number',
           prefixIcon: Assets.imagesPhoneIcon,
+          validator: (value) {
+            if (value!.isEmpty) {
+              return 'Phone Number is required';
+            }
+            if (value.length != 11) {
+              return 'Enter valid phone number';
+            }
+            return null;
+          },
         ),
         const SizedBox(
           height: 12,
