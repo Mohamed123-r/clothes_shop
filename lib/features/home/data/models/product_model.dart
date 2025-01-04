@@ -1,14 +1,17 @@
+import '../../domain/entities/product_entity.dart';
+
 class ProductModel {
   ProductModel({
-      this.id, 
-      this.name, 
-      this.price, 
-      this.imagePath, 
-      this.description, 
-      this.material, 
-      this.subCategory, 
-      this.categoryId, 
-      this.category,});
+    this.id,
+    this.name,
+    this.price,
+    this.imagePath,
+    this.description,
+    this.material,
+    this.subCategory,
+    this.categoryId,
+    this.category,
+  });
 
   ProductModel.fromJson(dynamic json) {
     id = json['id'];
@@ -21,6 +24,20 @@ class ProductModel {
     categoryId = json['categoryId'];
     category = json['category'];
   }
+
+  ProductEntity toEntity() {
+    return ProductEntity(
+        id: id!,
+        name: name!,
+        price: price!,
+        imagePath: imagePath!,
+        description: description!,
+        material: material!,
+        subCategory: subCategory!,
+        categoryId: categoryId!,
+        category: category!);
+  }
+
   num? id;
   String? name;
   num? price;
@@ -44,5 +61,4 @@ class ProductModel {
     map['category'] = category;
     return map;
   }
-
 }

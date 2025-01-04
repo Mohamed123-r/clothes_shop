@@ -10,8 +10,7 @@ import '../../../../core/api/dio_consumer.dart';
 import '../../../../core/api/end_point.dart';
 import '../../domain/repos/home_repo.dart';
 
-class HomeRepoImpl implements HomeRepo{
-
+class HomeRepoImpl implements HomeRepo {
   final DioConsumer dioConsumer;
 
   HomeRepoImpl({required this.dioConsumer});
@@ -29,15 +28,22 @@ class HomeRepoImpl implements HomeRepo{
 
   @override
   Future<Either<Failure, List<ProductEntity>>> fetchGetAllProducts() async {
-   try {
-     var response = await dioConsumer.get("${EndPoint.baseUrl}Product/GetAllProducts");
-     List<ProductEntity> products = response.map((e) => ProductModel.fromJson(e)).toList();
-     return Right(products);
-   } on CustomException catch (e) {
-     return Left(ServerFailure(e.toString()));
-   } catch (e) {
-     logger.e("Exception in  signInWithEmail :$e");
-     return Left(ServerFailure(e.toString()));
-   }
+    try {
+     var response =
+          await dioConsumer.get("${EndPoint.baseUrl}Product/GetAllProducts") as List< dynamic>;
+     ;
+      List<ProductEntity> products;
+      products = response
+          .map(
+            (e) => ProductModel.fromJson(e).toEntity(),
+          )
+          .toList();
+      return Right(products);
+    } on CustomException catch (e) {
+      return Left(ServerFailure(e.toString()));
+    } catch (e) {
+      logger.e("Exception in  signInWithEmail :$e");
+      return Left(ServerFailure(e.toString()));
+    }
   }
 }

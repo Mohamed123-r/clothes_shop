@@ -10,8 +10,7 @@ class CustomSliverAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String title = "Welcome ";
-    if (CacheHelper.sharedPreferences.getStringList(sharedPrefUserUser)![0] ==
-        CacheHelper.sharedPreferences.getString(sharedPrefUserEmail)) {
+    if (CacheHelper.sharedPreferences.getStringList(sharedPrefUserUser) != null) {
       title +=
           CacheHelper.sharedPreferences.getStringList(sharedPrefUserUser)![1];
     } else {

@@ -24,55 +24,52 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: SizedBox(
-          height: 60,
-          child: BottomNavigationBar(
-              type: BottomNavigationBarType.fixed,
-              backgroundColor: kFontColor,
-              selectedLabelStyle: Styles.caption1Regular,
-              selectedItemColor: kWhiteColor,
-              unselectedItemColor: kGreyColor,
-              currentIndex: _selectedIndex,
-              onTap: (int index) {
-                setState(() {
-                  _selectedIndex = index;
-                });
-              },
-              items: [
-                BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    _selectedIndex != 0
-                        ? Assets.imagesHomeIcon1
-                        : Assets.imagesHomeIcon2,
-                  ),
-                  label: 'Home',
+        bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            backgroundColor: kFontColor,
+            selectedLabelStyle: Styles.caption1Regular,
+            selectedItemColor: kWhiteColor,
+            unselectedItemColor: kGreyColor,
+            currentIndex: _selectedIndex,
+            onTap: (int index) {
+              setState(() {
+                _selectedIndex = index;
+              });
+            },
+            items: [
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  _selectedIndex != 0
+                      ? Assets.imagesHomeIcon1
+                      : Assets.imagesHomeIcon2,
                 ),
-                BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    _selectedIndex != 1
-                        ? Assets.imagesCategoriesIcon1
-                        : Assets.imagesCategoriesIcon2,
-                  ),
-                  label: 'Categories',
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  _selectedIndex != 1
+                      ? Assets.imagesCategoriesIcon1
+                      : Assets.imagesCategoriesIcon2,
                 ),
-                BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    _selectedIndex != 2
-                        ? Assets.imagesCartIcon1
-                        : Assets.imagesCartIcon2,
-                  ),
-                  label: 'My Cart',
+                label: 'Categories',
+              ),
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  _selectedIndex != 2
+                      ? Assets.imagesCartIcon1
+                      : Assets.imagesCartIcon2,
                 ),
-                BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    _selectedIndex != 3
-                        ? Assets.imagesAccountIcon1
-                        : Assets.imagesAccountIcon2,
-                  ),
-                  label: 'Account',
+                label: 'My Cart',
+              ),
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  _selectedIndex != 3
+                      ? Assets.imagesAccountIcon1
+                      : Assets.imagesAccountIcon2,
                 ),
-              ]),
-        ),
+                label: 'Account',
+              ),
+            ]),
         body: <Widget>[
           const HomeView(),
           const CategoriesView(),
