@@ -1,4 +1,4 @@
-import '../../features/home/domain/entities/over_entity.dart';
+import '../../features/home/domain/entities/offer_entity.dart';
 import '../../features/home/domain/entities/product_entity.dart';
 
 ProductEntity getDummyProduct() {

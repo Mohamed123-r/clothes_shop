@@ -1,4 +1,4 @@
-part of 'over_cubit.dart';
+part of 'offer_cubit.dart';
 
 @immutable
 sealed class OfferState {}

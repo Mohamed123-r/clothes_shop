@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../../../domain/entities/over_entity.dart';
+import '../../../domain/entities/offer_entity.dart';
 import '../../../domain/repos/home_repo.dart';
 
-part 'over_state.dart';
+part 'offer_state.dart';
 
 class OfferCubit extends Cubit<OfferState> {
   OfferCubit({required this.homeRepo}) : super(OfferInitial());

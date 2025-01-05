@@ -1,7 +1,7 @@
 import 'package:clothes_shop_app/constants.dart';
 import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:clothes_shop_app/core/widgets/custom_search.dart';
-import 'package:clothes_shop_app/features/home/presentation/manage/cubits/over_cubit.dart';
+import 'package:clothes_shop_app/features/home/presentation/manage/cubits/offer_cubit.dart';
 import 'package:clothes_shop_app/features/home/presentation/view/widgets/sliver_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

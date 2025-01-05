@@ -1,4 +1,4 @@
-import 'package:clothes_shop_app/features/home/domain/entities/over_entity.dart';
+import 'package:clothes_shop_app/features/home/domain/entities/offer_entity.dart';
 
 class OfferModel {
   OfferModel({

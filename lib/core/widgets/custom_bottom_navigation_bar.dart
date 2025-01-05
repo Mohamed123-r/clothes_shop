@@ -1,6 +1,6 @@
 import 'package:clothes_shop_app/features/cart/presentation/view/my_cart_view.dart';
 import 'package:clothes_shop_app/features/categories/presentation/view/categories_view.dart';
-import 'package:clothes_shop_app/features/home/presentation/manage/cubits/over_cubit.dart';
+import 'package:clothes_shop_app/features/home/presentation/manage/cubits/offer_cubit.dart';
 import 'package:clothes_shop_app/features/home/presentation/manage/cubits/product_cubit.dart';
 import 'package:clothes_shop_app/features/home/presentation/view/home_view.dart';
 import 'package:clothes_shop_app/features/profile/presentation/view/account_view.dart';

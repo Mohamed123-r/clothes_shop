@@ -5,7 +5,7 @@ import 'package:clothes_shop_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-import '../../../domain/entities/over_entity.dart';
+import '../../../domain/entities/offer_entity.dart';
 import 'custom_caroisel_slider.dart';
 
 class OffersSection extends StatelessWidget {

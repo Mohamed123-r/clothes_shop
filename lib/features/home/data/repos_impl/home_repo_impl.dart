@@ -2,14 +2,14 @@ import 'package:clothes_shop_app/core/error/exceptions.dart';
 import 'package:clothes_shop_app/core/error/failures.dart';
 import 'package:clothes_shop_app/features/home/data/models/Product_model.dart';
 import 'package:clothes_shop_app/features/home/domain/entities/category_entity.dart';
-import 'package:clothes_shop_app/features/home/domain/entities/over_entity.dart';
+import 'package:clothes_shop_app/features/home/domain/entities/offer_entity.dart';
 import 'package:clothes_shop_app/features/home/domain/entities/product_entity.dart';
 import 'package:dartz/dartz.dart';
 import '../../../../constants.dart';
 import '../../../../core/api/dio_consumer.dart';
 import '../../../../core/api/end_point.dart';
 import '../../domain/repos/home_repo.dart';
-import '../models/over_model.dart';
+import '../models/offer_model.dart';
 
 class HomeRepoImpl implements HomeRepo {
   final DioConsumer dioConsumer;
