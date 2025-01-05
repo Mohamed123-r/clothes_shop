@@ -6,8 +6,8 @@ import '../../../domain/repos/home_repo.dart';
 
 part 'over_state.dart';
 
-class OverCubit extends Cubit<OfferState> {
-  OverCubit({required this.homeRepo}) : super(OfferInitial());
+class OfferCubit extends Cubit<OfferState> {
+  OfferCubit({required this.homeRepo}) : super(OfferInitial());
 
   final HomeRepo homeRepo;
 

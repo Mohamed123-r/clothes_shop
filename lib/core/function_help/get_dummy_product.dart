@@ -1,4 +1,4 @@
-
+import '../../features/home/domain/entities/over_entity.dart';
 import '../../features/home/domain/entities/product_entity.dart';
 
 ProductEntity getDummyProduct() {
@@ -15,11 +15,25 @@ ProductEntity getDummyProduct() {
   );
 }
 
-
 List<ProductEntity> getDummyProducts() {
   List<ProductEntity> products = [];
   for (int i = 0; i < 10; i++) {
     products.add(getDummyProduct());
   }
   return products;
+}
+
+OfferEntity getDummyOffer() {
+  return OfferEntity(
+    id: 1,
+    image: '',
+  );
+}
+
+List<OfferEntity> getDummyOffers() {
+  List<OfferEntity> offers = [];
+  for (int i = 0; i < 10; i++) {
+    offers.add(getDummyOffer());
+  }
+  return offers;
 }

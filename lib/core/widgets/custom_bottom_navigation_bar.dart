@@ -1,5 +1,6 @@
 import 'package:clothes_shop_app/features/cart/presentation/view/my_cart_view.dart';
 import 'package:clothes_shop_app/features/categories/presentation/view/categories_view.dart';
+import 'package:clothes_shop_app/features/home/presentation/manage/cubits/over_cubit.dart';
 import 'package:clothes_shop_app/features/home/presentation/manage/cubits/product_cubit.dart';
 import 'package:clothes_shop_app/features/home/presentation/view/home_view.dart';
 import 'package:clothes_shop_app/features/profile/presentation/view/account_view.dart';
@@ -79,6 +80,10 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             BlocProvider(
                 create: (context) => ProductCubit(
                       getIt.get<HomeRepo>(),
+                    )),
+            BlocProvider(
+                create: (context) => OfferCubit(
+                      homeRepo: getIt.get<HomeRepo>(),
                     )),
           ], child: const HomeView()),
           const CategoriesView(),

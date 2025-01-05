@@ -1,6 +1,7 @@
 import 'package:clothes_shop_app/constants.dart';
 import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:clothes_shop_app/core/widgets/custom_search.dart';
+import 'package:clothes_shop_app/features/home/presentation/manage/cubits/over_cubit.dart';
 import 'package:clothes_shop_app/features/home/presentation/view/widgets/sliver_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,6 +12,7 @@ import 'categories_section.dart';
 
 import 'new_arrival_section_bloc_consumer.dart';
 import 'offers_section.dart';
+import 'offers_sections_bloc_builder.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
@@ -23,8 +25,10 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   @override
   void initState() {
     context.read<ProductCubit>().fetchGetAllProducts();
+    context.read<OfferCubit>().fetchGetAllOffers();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -68,7 +72,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        OffersSection(),
+                        OffersSectionBlocBuilder(),
                         CategoriesSection(),
                         SizedBox(
                           height: 16,
@@ -89,5 +93,4 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     );
   }
 }
-
 
