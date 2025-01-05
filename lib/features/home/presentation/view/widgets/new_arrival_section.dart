@@ -53,7 +53,7 @@ final List<ProductEntity> products;
                   title: products[index].name,
                   subTitle: products[index].subCategory,
                   price: products[index].price.toString(),
-                  image: Assets.imagesTest,
+                  image: products[index].imagePath,
                 );
               },
             ),

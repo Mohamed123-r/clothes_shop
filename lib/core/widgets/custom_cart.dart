@@ -1,6 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:clothes_shop_app/core/widgets/custom_love.dart';
+import 'package:clothes_shop_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import '../../constants.dart';
 import '../utils/styles.dart';
 
@@ -52,15 +55,35 @@ class CustomCart extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Stack(
-              children: [
-                Image.asset(image, width: 160, height: 150, fit: BoxFit.cover),
-                const Positioned(
-                  top: 10,
-                  right: 10,
-                  child: CustomLove(),
-                ),
-              ],
+            Center(
+              child: Stack(
+                children: [
+                  CachedNetworkImage(
+                    height: 150,
+                    imageUrl: image,
+                    imageBuilder: (context, imageProvider) => Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        image: DecorationImage(
+                          image: imageProvider,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    placeholder: (context, url) => Skeletonizer(
+                      child: Image.asset(Assets.imagesTest),
+                    ),
+                    errorWidget: (context, url, error) => const Icon(
+                      Icons.error,
+                    ),
+                  ),
+                  const Positioned(
+                    top: 10,
+                    right: 10,
+                    child: CustomLove(),
+                  ),
+                ],
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
