@@ -9,11 +9,13 @@ import '../../../../constants.dart';
 import '../../../../core/api/dio_consumer.dart';
 import '../../../../core/api/end_point.dart';
 import '../../domain/repos/home_repo.dart';
+import '../models/over_model.dart';
 
 class HomeRepoImpl implements HomeRepo {
   final DioConsumer dioConsumer;
 
   HomeRepoImpl({required this.dioConsumer});
+
   @override
   Future<Either<Failure, List<CategoryEntity>>> fetchGetAllCategories() {
     // TODO: implement fetchGetAllCategories
@@ -21,17 +23,31 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<OverEntity>>> fetchGetAllOver() {
-    // TODO: implement fetchGetAllOver
-    throw UnimplementedError();
+  Future<Either<Failure, List<OfferEntity>>> fetchGetAllOver() async {
+    try {
+      var response = await dioConsumer.get("${EndPoint.baseUrl}Offers/GetAll")
+          as List<dynamic>;
+
+      List<OfferEntity> offers;
+      offers = response
+          .map(
+            (e) => OfferModel.fromJson(e).toEntity(),
+          )
+          .toList();
+      return Right(offers);
+    } on CustomException catch (e) {
+      return Left(ServerFailure(e.toString()));
+    } catch (e) {
+      logger.e("Exception in  offerHomeRepoImpl :$e");
+      return Left(ServerFailure(e.toString()));
+    }
   }
 
   @override
   Future<Either<Failure, List<ProductEntity>>> fetchGetAllProducts() async {
     try {
-     var response =
-          await dioConsumer.get("${EndPoint.baseUrl}Product/GetAllProducts") as List< dynamic>;
-     ;
+      var response = await dioConsumer
+          .get("${EndPoint.baseUrl}Product/GetAllProducts") as List<dynamic>;
       List<ProductEntity> products;
       products = response
           .map(
@@ -42,7 +58,7 @@ class HomeRepoImpl implements HomeRepo {
     } on CustomException catch (e) {
       return Left(ServerFailure(e.toString()));
     } catch (e) {
-      logger.e("Exception in  signInWithEmail :$e");
+      logger.e("Exception in  ProductHomeRepoImpl :$e");
       return Left(ServerFailure(e.toString()));
     }
   }

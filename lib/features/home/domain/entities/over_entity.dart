@@ -1,6 +1,6 @@
-class OverEntity {
-  final int id;
+class OfferEntity {
+  final num id;
   final String image;
 
-  OverEntity({required this.id, required this.image});
+  OfferEntity({required this.id, required this.image});
 }
