@@ -9,6 +9,7 @@ import '../../../../constants.dart';
 import '../../../../core/api/dio_consumer.dart';
 import '../../../../core/api/end_point.dart';
 import '../../domain/repos/home_repo.dart';
+import '../models/category_model.dart';
 import '../models/offer_model.dart';
 
 class HomeRepoImpl implements HomeRepo {
@@ -17,9 +18,24 @@ class HomeRepoImpl implements HomeRepo {
   HomeRepoImpl({required this.dioConsumer});
 
   @override
-  Future<Either<Failure, List<CategoryEntity>>> fetchGetAllCategories() {
-    // TODO: implement fetchGetAllCategories
-    throw UnimplementedError();
+  Future<Either<Failure, List<CategoryEntity>>> fetchGetAllCategories() async {
+    try {
+      var response = await dioConsumer.get("${EndPoint.baseUrl}Category/GetAllCategory")
+          as List<dynamic>;
+
+      List<CategoryEntity> category;
+      category = response
+          .map(
+            (e) => CategoryModel.fromJson(e).toEntity(),
+          )
+          .toList();
+      return Right(category);
+    } on CustomException catch (e) {
+      return Left(ServerFailure(e.toString()));
+    } catch (e) {
+      logger.e("Exception in  offerHomeRepoImpl :$e");
+      return Left(ServerFailure(e.toString()));
+    }
   }
 
   @override
