@@ -33,7 +33,7 @@ class HomeRepoImpl implements HomeRepo {
     } on CustomException catch (e) {
       return Left(ServerFailure(e.toString()));
     } catch (e) {
-      logger.e("Exception in  offerHomeRepoImpl :$e");
+      logger.e("Exception in  categoryHomeRepoImpl :$e");
       return Left(ServerFailure(e.toString()));
     }
   }

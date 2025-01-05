@@ -27,7 +27,7 @@ class CategoriesViewBody extends StatelessWidget {
           children: List.generate(
             10,
             (index) => const CategoriesItem(
-              title: 'Kids',
+              title: 'Kids', image: '',
             ),
           ),
         ),

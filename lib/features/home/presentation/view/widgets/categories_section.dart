@@ -1,15 +1,16 @@
 import 'package:clothes_shop_app/constants.dart';
 import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:clothes_shop_app/core/utils/styles.dart';
+import 'package:clothes_shop_app/features/home/domain/entities/category_entity.dart';
 import 'package:flutter/material.dart';
 
 import 'categories_item.dart';
 
 class CategoriesSection extends StatelessWidget {
   const CategoriesSection({
-    super.key,
+    super.key, required this.categories,
   });
-
+final  List<CategoryEntity> categories;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,82 +25,25 @@ class CategoriesSection extends StatelessWidget {
           const SizedBox(
             height: 8,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    AppRouter.router(
-                      const RouteSettings(
-                        name: AppRouter.kProductDetailsView,
-                      ),
-                    ),
-                  );
-                },
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      AppRouter.router(
-                        const RouteSettings(
-                          name: AppRouter.kProductDetailsView,
-                        ),
-                      ),
-                    );
-                  },
-                  child: const CategoriesItem(
-                    title: 'Men',
+          SizedBox(
+            height: 90,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (BuildContext context, int index) {
+                return GestureDetector(
+                  onTap: () {},
+                  child:  CategoriesItem(
+                    title:categories[index].title, image:categories[index].imageUrl ,
                   ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    AppRouter.router(
-                      const RouteSettings(
-                        name: AppRouter.kProductDetailsView,
-                      ),
-                    ),
-                  );
-                },
-                child: const CategoriesItem(
-                  title: 'Woman',
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    AppRouter.router(
-                      const RouteSettings(
-                        name: AppRouter.kProductDetailsView,
-                      ),
-                    ),
-                  );
-                },
-                child: const CategoriesItem(
-                  title: 'Kids',
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    AppRouter.router(
-                      const RouteSettings(
-                        name: AppRouter.kProductDetailsView,
-                      ),
-                    ),
-                  );
-                },
-                child: const CategoriesItem(
-                  title: 'New Arrival',
-                ),
-              ),
-            ],
+                );
+              },
+              separatorBuilder: (BuildContext context, int index) {
+                return const SizedBox(
+                  width: 16,
+                );
+              },
+              itemCount: categories.length,
+            ),
           ),
         ],
       ),
