@@ -1,10 +1,14 @@
 import 'package:clothes_shop_app/core/utils/app_router.dart';
+import 'package:clothes_shop_app/features/home/domain/entities/product_entity.dart';
 import 'package:flutter/material.dart';
 
+import '../../../domain/entities/category_entity.dart';
 import 'categories_item.dart';
 
 class CategoriesViewBody extends StatelessWidget {
-  const CategoriesViewBody({super.key});
+  const CategoriesViewBody({super.key, required this.categories});
+
+  final List<CategoryEntity> categories;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +29,10 @@ class CategoriesViewBody extends StatelessWidget {
           spacing: 50,
           runSpacing: 15,
           children: List.generate(
-            10,
-            (index) => const CategoriesItem(
-              title: 'Kids', image: '',
+            categories.length,
+            (index) => CategoriesItem(
+              title: categories[index].title,
+              image: categories[index].imageUrl,
             ),
           ),
         ),

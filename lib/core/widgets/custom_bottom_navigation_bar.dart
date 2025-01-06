@@ -1,5 +1,5 @@
 import 'package:clothes_shop_app/features/cart/presentation/view/my_cart_view.dart';
-import 'package:clothes_shop_app/features/categories/presentation/view/categories_view.dart';
+import 'package:clothes_shop_app/features/home/presentation/view/categories_view.dart';
 import 'package:clothes_shop_app/features/home/presentation/manage/cubits/category_cubit.dart';
 import 'package:clothes_shop_app/features/home/presentation/manage/cubits/offer_cubit.dart';
 import 'package:clothes_shop_app/features/home/presentation/manage/cubits/product_cubit.dart';
@@ -88,10 +88,15 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                     )),
             BlocProvider(
                 create: (context) => CategoryCubit(
-                  homeRepo: getIt.get<HomeRepo>(),
-                )),
+                      homeRepo: getIt.get<HomeRepo>(),
+                    )),
           ], child: const HomeView()),
-          const CategoriesView(),
+          BlocProvider(
+            create: (context) => CategoryCubit(
+              homeRepo: getIt.get<HomeRepo>(),
+            ),
+            child: const CategoriesView(),
+          ),
           const MyCartView(),
           const AccountView(),
         ][_selectedIndex]);
