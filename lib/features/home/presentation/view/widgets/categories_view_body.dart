@@ -1,7 +1,7 @@
 import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../home/presentation/view/widgets/categories_item.dart';
+import 'categories_item.dart';
 
 class CategoriesViewBody extends StatelessWidget {
   const CategoriesViewBody({super.key});

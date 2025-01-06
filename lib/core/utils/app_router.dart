@@ -11,8 +11,8 @@ import 'package:clothes_shop_app/features/search/presentation/view/search_view.d
 import 'package:flutter/material.dart';
 import '../../features/authentication/login/presentation/view/forgot_password_view.dart';
 import '../../features/authentication/login/presentation/view/verification_view.dart';
-import '../../features/categories/presentation/view/categories_details_view.dart';
-import '../../features/categories/presentation/view/categories_view.dart';
+import '../../features/home/presentation/view/categories_details_view.dart';
+import '../../features/home/presentation/view/categories_view.dart';
 import '../../features/onboarding/presentation/view/onboarding_view.dart';
 import '../../features/splash/presentation/view/splash_view.dart';
 import '../widgets/custom_bottom_navigation_bar.dart';

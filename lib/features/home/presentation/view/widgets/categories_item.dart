@@ -19,10 +19,11 @@ class CategoriesItem extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 35,
+          backgroundColor: Colors.grey.shade200,
           child: CachedNetworkImage(
             imageUrl: image,
-            placeholder: (context, url) =>  Skeletonizer(
-              child: Image.network(image),
+            placeholder: (context, url) =>  const Skeletonizer(
+              child: SizedBox(),
             ),
             imageBuilder: (context, imageProvider) => Container(
               decoration: BoxDecoration(
