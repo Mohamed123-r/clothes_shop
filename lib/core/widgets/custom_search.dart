@@ -5,16 +5,19 @@ import '../../constants.dart';
 import '../utils/styles.dart';
 
 class CustomSearch extends StatelessWidget {
-  const CustomSearch({super.key, this.onTabFromFilter});
+  const CustomSearch({super.key, this.onTabFromFilter, this.controller, this.onChanged});
 
   final Function()? onTabFromFilter;
-
+final   TextEditingController? controller ;
+final Function(String)? onChanged ;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Expanded(
           child: TextFormField(
+            onChanged :onChanged,
+            controller: controller,
             cursorColor: kGreyColor,
             decoration: InputDecoration(
               contentPadding:
