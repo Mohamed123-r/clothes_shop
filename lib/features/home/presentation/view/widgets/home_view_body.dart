@@ -47,15 +47,15 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               children: [
                 Container(
                   padding:
-                  const EdgeInsets.only(bottom: 16, right: 16, left: 16),
+                      const EdgeInsets.only(bottom: 16, right: 16, left: 16),
                   decoration: const BoxDecoration(
                       color: kFontColor,
                       borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(24),
                         bottomRight: Radius.circular(24),
                       )),
-                  child: CustomSearch(
-                    onTabFromFilter: () {
+                  child: InkWell(
+                    onTap: () {
                       Navigator.push(
                         context,
                         AppRouter.router(
@@ -65,6 +65,10 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                         ),
                       );
                     },
+                    child: const IgnorePointer(
+                      ignoring: true, // يمنع التفاعل
+                      child: CustomSearch(),
+                    ),
                   ),
                 ),
                 const Expanded(
@@ -95,5 +99,3 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     );
   }
 }
-
-

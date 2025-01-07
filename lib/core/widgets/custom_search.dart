@@ -5,18 +5,19 @@ import '../../constants.dart';
 import '../utils/styles.dart';
 
 class CustomSearch extends StatelessWidget {
-  const CustomSearch({super.key, this.onTabFromFilter, this.controller, this.onChanged});
+  const CustomSearch({super.key, this.controller, this.onChanged});
 
-  final Function()? onTabFromFilter;
-final   TextEditingController? controller ;
-final Function(String)? onChanged ;
+  final TextEditingController? controller;
+
+  final Function(String)? onChanged;
+
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Expanded(
           child: TextFormField(
-            onChanged :onChanged,
+            onChanged: onChanged,
             controller: controller,
             cursorColor: kGreyColor,
             decoration: InputDecoration(
@@ -43,25 +44,25 @@ final Function(String)? onChanged ;
             ),
           ),
         ),
-        const SizedBox(
-          width: 20,
-        ),
-        GestureDetector(
-          onTap: onTabFromFilter,
-          child: Container(
-            height: 48,
-            width: 48,
-            decoration: BoxDecoration(
-              color: kWhiteColor,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Center(
-              child: SvgPicture.asset(
-                Assets.imagesFilterIcon,
-              ),
-            ),
-          ),
-        )
+        // const SizedBox(
+        //   width: 20,
+        // ),
+        // GestureDetector(
+        //   onTap: onTabFromFilter,
+        //   child: Container(
+        //     height: 48,
+        //     width: 48,
+        //     decoration: BoxDecoration(
+        //       color: kWhiteColor,
+        //       borderRadius: BorderRadius.circular(10),
+        //     ),
+        //     child: Center(
+        //       child: SvgPicture.asset(
+        //         Assets.imagesFilterIcon,
+        //       ),
+        //     ),
+        //   ),
+        // )
       ],
     );
   }
