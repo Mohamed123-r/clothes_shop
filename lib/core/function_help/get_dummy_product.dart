@@ -19,7 +19,7 @@ ProductEntity getDummyProduct() {
 
 List<ProductEntity> getDummyProducts() {
   List<ProductEntity> products = [];
-  for (int i = 0; i < 10; i++) {
+  for (int i = 0; i < 30; i++) {
     products.add(getDummyProduct());
   }
   return products;
@@ -35,7 +35,7 @@ OfferEntity getDummyOffer() {
 
 List<OfferEntity> getDummyOffers() {
   List<OfferEntity> offers = [];
-  for (int i = 0; i < 10; i++) {
+  for (int i = 0; i < 30; i++) {
     offers.add(getDummyOffer());
   }
   return offers;
@@ -51,7 +51,7 @@ CategoryEntity getDummyCategory() {
 
 List<CategoryEntity> getDummyCategories() {
   List<CategoryEntity> offers = [];
-  for (int i = 0; i < 10; i++) {
+  for (int i = 0; i < 30; i++) {
     offers.add(getDummyCategory());
   }
   return offers;
