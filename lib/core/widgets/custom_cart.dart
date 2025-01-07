@@ -71,10 +71,19 @@ class CustomCart extends StatelessWidget {
                       ),
                     ),
                     placeholder: (context, url) => Skeletonizer(
-                      child: Image.asset(Assets.imagesTest),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(16),
+                        child: Image.asset(
+                          Assets.imagesTest,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
                     ),
-                    errorWidget: (context, url, error) => const Icon(
-                      Icons.error,
+                    errorWidget: (context, url, error) => Container(
+                      width: double.infinity,
+                      child: const Icon(
+                        Icons.error,
+                      ),
                     ),
                   ),
                   const Positioned(

@@ -7,7 +7,7 @@ import 'package:clothes_shop_app/features/productDetails/presentation/view/produ
 import 'package:clothes_shop_app/features/onboarding/presentation/view/start_view.dart';
 import 'package:clothes_shop_app/features/profile/presentation/view/account_details_view.dart';
 import 'package:clothes_shop_app/features/profile/presentation/view/edit_profile_view.dart';
-import 'package:clothes_shop_app/features/search/presentation/view/search_view.dart';
+import 'package:clothes_shop_app/features/home/presentation/view/search_view.dart';
 import 'package:flutter/material.dart';
 import '../../features/authentication/login/presentation/view/forgot_password_view.dart';
 import '../../features/authentication/login/presentation/view/verification_view.dart';
