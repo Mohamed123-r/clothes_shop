@@ -1,12 +1,11 @@
 import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:clothes_shop_app/core/widgets/custom_cart.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../../generated/assets.dart';
+import '../../../domain/entities/category_details_entity.dart';
 
 class CategoriesDetailsViewBody extends StatelessWidget {
-  const CategoriesDetailsViewBody({super.key});
-
+  const CategoriesDetailsViewBody({super.key, required this.categoriesDetails});
+final List<CategoryDetailsEntity> categoriesDetails;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,24 +18,24 @@ class CategoriesDetailsViewBody extends StatelessWidget {
         mainAxisSpacing: 12,
         shrinkWrap: true,
         children: List.generate(
-          20,
+         categoriesDetails.length,
           (index) {
             return GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
                   AppRouter.router(
-                    const RouteSettings(
+                     RouteSettings(
                       name: AppRouter.kProductDetailsView,
                     ),
                   ),
                 );
               },
-              child: const CustomCart(
-                title: 'Muslim Tops Loose',
-                subTitle: 'Isdal',
-                price: '1500EG',
-                image: Assets.imagesTest,
+              child:  CustomCart(
+                title: categoriesDetails[index].name ,
+                subTitle: categoriesDetails[index].subCategory,
+                price: categoriesDetails[index].price.toString(),
+                image: categoriesDetails[index].imagePath,
               ),
             );
           },

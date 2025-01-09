@@ -1,3 +1,5 @@
+import 'package:clothes_shop_app/features/home/domain/entities/category_details_entity.dart';
+
 import '../../features/home/domain/entities/category_entity.dart';
 import '../../features/home/domain/entities/offer_entity.dart';
 import '../../features/home/domain/entities/product_entity.dart';
@@ -24,7 +26,28 @@ List<ProductEntity> getDummyProducts() {
   }
   return products;
 }
+CategoryDetailsEntity getDummyCategoryDetail() {
+  return  CategoryDetailsEntity(
+    id: 1,
+    name: "name",
+    imagePath:
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3wxJ0c-jC6VcDASO9aiDWD9zWAeJLKrS5gg&s",
+    price: 0,
+    description: "description",
+    material: "material",
+    subCategory: "subCategory",
+    categoryId: 0,
+    category: "category",
+  );
+}
 
+List<CategoryDetailsEntity> getDummyCategoryDetails() {
+  List<CategoryDetailsEntity> products = [];
+  for (int i = 0; i < 30; i++) {
+    products.add(getDummyCategoryDetail());
+  }
+  return products;
+}
 OfferEntity getDummyOffer() {
   return OfferEntity(
     id: 1,

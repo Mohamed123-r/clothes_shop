@@ -8,9 +8,12 @@ import 'categories_item.dart';
 
 class CategoriesSection extends StatelessWidget {
   const CategoriesSection({
-    super.key, required this.categories,
+    super.key,
+    required this.categories,
   });
-final  List<CategoryEntity> categories;
+
+  final List<CategoryEntity> categories;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,9 +34,20 @@ final  List<CategoryEntity> categories;
               scrollDirection: Axis.horizontal,
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
-                  onTap: () {},
-                  child:  CategoriesItem(
-                    title:categories[index].title, image:categories[index].imageUrl ,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      AppRouter.router(
+                        RouteSettings(
+                          name: AppRouter.kCategoriesDetailsView,
+                          arguments: {'id': categories[index].id},
+                        ),
+                      ),
+                    );
+                  },
+                  child: CategoriesItem(
+                    title: categories[index].title,
+                    image: categories[index].imageUrl,
                   ),
                 );
               },
@@ -42,7 +56,7 @@ final  List<CategoryEntity> categories;
                   width: 16,
                 );
               },
-              itemCount: categories.length,
+              itemCount: categories.length > 4 ? 4 : categories.length,
             ),
           ),
         ],

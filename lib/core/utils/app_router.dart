@@ -101,8 +101,12 @@ abstract class AppRouter {
         });
 
       case kCategoriesDetailsView:
+        final arguments = settings.arguments as Map<String, dynamic>;
+        final id = arguments['id'] as int;
         return MaterialPageRoute(builder: (context) {
-          return const CategoriesDetailsView();
+          return CategoriesDetailsView(
+            id: id,
+          );
         });
 
       case kProductDetailsView:

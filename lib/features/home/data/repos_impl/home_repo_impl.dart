@@ -44,7 +44,7 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<CategoryDetailsEntity>>> fetchGetCategoryDetails(int id) async {
     try {
       var response = await dioConsumer
-          .get("${EndPoint.baseUrl}api/Category/$id") as List<dynamic>;
+          .get("${EndPoint.baseUrl}Category/$id") as List<dynamic>;
       List<CategoryDetailsEntity> categoryDetails;
       categoryDetails = response
           .map(
