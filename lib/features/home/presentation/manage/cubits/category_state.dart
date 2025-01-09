@@ -18,3 +18,9 @@ final class CategoryFailure extends CategoryState {
 
   CategoryFailure(this.message);
 }
+
+final class CategoryDetailsSuccess extends CategoryState {
+  final List<CategoryDetailsEntity> categoryDetails;
+
+  CategoryDetailsSuccess(this.categoryDetails);
+}

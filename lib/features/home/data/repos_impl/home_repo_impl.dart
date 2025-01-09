@@ -1,6 +1,8 @@
 import 'package:clothes_shop_app/core/error/exceptions.dart';
 import 'package:clothes_shop_app/core/error/failures.dart';
+import 'package:clothes_shop_app/features/home/data/models/Category_details_model.dart';
 import 'package:clothes_shop_app/features/home/data/models/Product_model.dart';
+import 'package:clothes_shop_app/features/home/domain/entities/category_details_entity.dart';
 import 'package:clothes_shop_app/features/home/domain/entities/category_entity.dart';
 import 'package:clothes_shop_app/features/home/domain/entities/offer_entity.dart';
 import 'package:clothes_shop_app/features/home/domain/entities/product_entity.dart';
@@ -34,6 +36,26 @@ class HomeRepoImpl implements HomeRepo {
       return Left(ServerFailure(e.toString()));
     } catch (e) {
       logger.e("Exception in  categoryHomeRepoImpl :$e");
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<CategoryDetailsEntity>>> fetchGetCategoryDetails(int id) async {
+    try {
+      var response = await dioConsumer
+          .get("${EndPoint.baseUrl}api/Category/$id") as List<dynamic>;
+      List<CategoryDetailsEntity> categoryDetails;
+      categoryDetails = response
+          .map(
+            (e) => CategoryDetailsModel.fromJson(e).toEntity(),
+          )
+          .toList();
+      return Right(categoryDetails);
+    } on CustomException catch (e) {
+      return Left(ServerFailure(e.toString()));
+    } catch (e) {
+      logger.e("Exception in  CategoryDetailsHomeRepoImpl :$e");
       return Left(ServerFailure(e.toString()));
     }
   }
@@ -78,4 +100,7 @@ class HomeRepoImpl implements HomeRepo {
       return Left(ServerFailure(e.toString()));
     }
   }
+
+
+
 }
