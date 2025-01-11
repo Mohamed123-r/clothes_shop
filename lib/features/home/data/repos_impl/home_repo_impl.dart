@@ -101,6 +101,22 @@ class HomeRepoImpl implements HomeRepo {
     }
   }
 
+  @override
+  Future<Either<Failure,ProductEntity>> fetchGetProductDetails(int id) async {
+    try {
+      var response = await dioConsumer
+          .get("${EndPoint.baseUrl}Product/$id")  as Map<String, dynamic >;
+      ProductEntity productDetails;
+      productDetails  = ProductModel.fromJson(response).toEntity();
+      return Right(productDetails);
+    } on CustomException catch (e) {
+      return Left(ServerFailure(e.toString()));
+    } catch (e) {
+      logger.e("Exception in  ProductDetailsHomeRepoImpl :$e");
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
 
 
 }

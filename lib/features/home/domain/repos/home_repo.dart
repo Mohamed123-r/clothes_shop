@@ -9,6 +9,8 @@ import '../entities/offer_entity.dart';
 abstract class HomeRepo {
   Future<Either<Failure, List<ProductEntity>>> fetchGetAllProducts();
 
+  Future<Either<Failure, ProductEntity>> fetchGetProductDetails(int id);
+
   Future<Either<Failure, List<OfferEntity>>> fetchGetAllOver();
 
   Future<Either<Failure, List<CategoryEntity>>> fetchGetAllCategories();
