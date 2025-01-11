@@ -13,10 +13,10 @@ class CustomCart extends StatelessWidget {
       required this.title,
       required this.subTitle,
       required this.price,
-      required this.image});
+      required this.image, required this.id});
 
   final String title;
-
+final int id;
   final String subTitle;
 
   final String price;
@@ -30,8 +30,10 @@ class CustomCart extends StatelessWidget {
         Navigator.push(
           context,
           AppRouter.router(
-            const RouteSettings(
-              name: AppRouter.kProductDetailsView,
+             RouteSettings(
+              name: AppRouter.kProductDetailsView,arguments: {
+              'id': id,
+              }
             ),
           ),
         );
@@ -79,7 +81,7 @@ class CustomCart extends StatelessWidget {
                         ),
                       ),
                     ),
-                    errorWidget: (context, url, error) => Container(
+                    errorWidget: (context, url, error) => SizedBox(
                       width: double.infinity,
                       child: const Icon(
                         Icons.error,

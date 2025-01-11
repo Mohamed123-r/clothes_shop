@@ -2,15 +2,15 @@ import 'package:clothes_shop_app/constants.dart';
 import 'package:clothes_shop_app/core/utils/styles.dart';
 import 'package:clothes_shop_app/core/widgets/custom_cart.dart';
 import 'package:clothes_shop_app/features/home/domain/entities/product_entity.dart';
-import 'package:clothes_shop_app/generated/assets.dart';
 import 'package:flutter/material.dart';
-
 
 class NewArrivalSection extends StatelessWidget {
   const NewArrivalSection({
-    super.key, required this.products,
+    super.key,
+    required this.products,
   });
-final List<ProductEntity> products;
+
+  final List<ProductEntity> products;
 
   @override
   Widget build(BuildContext context) {
@@ -48,12 +48,13 @@ final List<ProductEntity> products;
             physics: const NeverScrollableScrollPhysics(),
             children: List.generate(
               products.length,
-                  (index) {
-                return  CustomCart(
+              (index) {
+                return CustomCart(
                   title: products[index].name,
                   subTitle: products[index].subCategory,
                   price: products[index].price.toString(),
                   image: products[index].imagePath,
+                  id: products[index].id as int,
                 );
               },
             ),

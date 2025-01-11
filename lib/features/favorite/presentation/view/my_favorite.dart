@@ -33,7 +33,7 @@ class MyFavorite extends StatelessWidget {
                       title: 'Muslim Tops Loose',
                       subTitle: 'Isdal',
                       price: '1500EG',
-                      image: Assets.imagesTest,
+                      image: Assets.imagesTest, id: 1,
                     );
                   },
                 ),
