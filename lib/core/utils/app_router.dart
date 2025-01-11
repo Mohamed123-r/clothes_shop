@@ -3,7 +3,7 @@ import 'package:clothes_shop_app/features/authentication/login/presentation/view
 import 'package:clothes_shop_app/features/authentication/signup/presentation/view/sign_up_view.dart';
 import 'package:clothes_shop_app/features/favorite/presentation/view/my_favorite.dart';
 import 'package:clothes_shop_app/features/home/presentation/view/home_view.dart';
-import 'package:clothes_shop_app/features/productDetails/presentation/view/product_details_view.dart';
+import 'package:clothes_shop_app/features/home/presentation/view/product_details_view.dart';
 import 'package:clothes_shop_app/features/onboarding/presentation/view/start_view.dart';
 import 'package:clothes_shop_app/features/profile/presentation/view/account_details_view.dart';
 import 'package:clothes_shop_app/features/profile/presentation/view/edit_profile_view.dart';
