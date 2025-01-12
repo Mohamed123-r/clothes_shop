@@ -18,13 +18,21 @@ class ProductDetailsBody extends StatelessWidget {
       height: double.infinity,
       child: Stack(
         children: [
-          Image.network(
-            productDetails.imagePath,
-            fit: BoxFit.fill,
-            width: double.infinity,
+          Column(
+            children: [
+              Expanded(
+                child: Image.network(
+                  productDetails.imagePath,
+                  fit: BoxFit.fill,
+                  width: double.infinity,
+                ),
+              ),
+              DetailsSection(
+                productDetails: productDetails,
+              ),
+            ],
           ),
           const AppBarSection(),
-          const DetailsSection(),
         ],
       ),
     );

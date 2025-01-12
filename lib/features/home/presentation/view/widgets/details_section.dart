@@ -4,12 +4,16 @@ import 'package:clothes_shop_app/core/widgets/custom_button.dart';
 import 'package:clothes_shop_app/core/widgets/custom_counter.dart';
 import 'package:clothes_shop_app/core/widgets/custom_list_of_color.dart';
 import 'package:clothes_shop_app/core/widgets/custom_size.dart';
+import 'package:clothes_shop_app/features/home/domain/entities/product_entity.dart';
 import 'package:flutter/material.dart';
 
 class DetailsSection extends StatelessWidget {
   const DetailsSection({
     super.key,
+    required this.productDetails,
   });
+
+  final ProductEntity productDetails;
 
   @override
   Widget build(BuildContext context) {
@@ -43,13 +47,13 @@ class DetailsSection extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Product Name',
+                      productDetails.name,
                       style: Styles.subTitle1Bold.copyWith(
                         color: kDarkGreyColor,
                       ),
                     ),
                     Text(
-                      'Muslim Tops Loose',
+                      productDetails.material,
                       style: Styles.caption1Regular.copyWith(
                         color: kGreyColor,
                       ),
@@ -62,52 +66,11 @@ class DetailsSection extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Size',
-                      style: Styles.subTitle1Bold.copyWith(
-                        color: kDarkGreyColor,
-                      ),
-                    ),
-                    const Row(
-                      children: [
-                        CustomSize(
-                          title: 'S',
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        CustomSize(
-                          title: 'M',
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        CustomSize(
-                          title: 'L',
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        CustomSize(
-                          title: 'XL',
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        CustomSize(
-                          title: 'XXL',
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                const CustomListOfColor(colors: [
+                SizeOfProduct(),
+                CustomListOfColor(colors: [
                   Colors.red,
                   Colors.black,
                   Colors.blue,
@@ -126,7 +89,7 @@ class DetailsSection extends StatelessWidget {
               ),
             ),
             Text(
-              'Get a little lift from these Sam Edelman sandals featuring ruched straps and leather lace-up ties, while a braided jute sole makes a fresh statement for summer',
+              productDetails.description,
               style: Styles.textButton.copyWith(
                 color: kGreyColor,
               ),
@@ -142,13 +105,13 @@ class DetailsSection extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      'Muslim Tops Loose',
+                      'Price',
                       style: Styles.caption2Regular.copyWith(
                         color: kGreyColor,
                       ),
                     ),
                     Text(
-                      '1500 EG',
+                      productDetails.price.toString(),
                       style: Styles.subTitle2Bold.copyWith(
                         color: kDarkGreyColor,
                       ),
@@ -169,6 +132,96 @@ class DetailsSection extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class SizeOfProduct extends StatefulWidget {
+  const SizeOfProduct({
+    super.key,
+  });
+
+  @override
+  State<SizeOfProduct> createState() => _SizeOfProductState();
+}
+
+class _SizeOfProductState extends State<SizeOfProduct> {
+  int count = 1;
+  bool isSelected = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Size',
+          style: Styles.subTitle1Bold.copyWith(
+            color: kDarkGreyColor,
+          ),
+        ),
+        Row(
+          children: [
+            CustomSize(
+              title: 'S',
+              isSelected: count == 1 ? isSelected : !isSelected,
+              onTap: () {
+                setState(() {
+                  count = 1;
+                });
+              },
+            ),
+            const SizedBox(
+              width: 8,
+            ),
+            CustomSize(
+              title: 'M',
+              isSelected: count == 2 ? isSelected : !isSelected,
+              onTap: () {
+                setState(() {
+                  count = 2;
+                });
+              },
+            ),
+            const SizedBox(
+              width: 8,
+            ),
+            CustomSize(
+              title: 'L',
+              isSelected: count == 3 ? isSelected : !isSelected,
+              onTap: () {
+                setState(() {
+                  count = 3;
+                });
+              },
+            ),
+            const SizedBox(
+              width: 8,
+            ),
+            CustomSize(
+              title: 'XL',
+              isSelected: count == 4 ? isSelected : !isSelected,
+              onTap: () {
+                setState(() {
+                  count = 4;
+                });
+              },
+            ),
+            const SizedBox(
+              width: 8,
+            ),
+            CustomSize(
+              title: 'XXL',
+              isSelected: count == 5 ? isSelected : !isSelected,
+              onTap: () {
+                setState(() {
+                  count = 5;
+                });
+              },
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

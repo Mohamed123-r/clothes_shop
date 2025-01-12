@@ -30,13 +30,6 @@ class CustomListOfColor extends StatelessWidget {
           CircleAvatar(
             radius: 7,
             backgroundColor: colors[0],
-            child: const Center(
-              child: Icon(
-                Icons.check,
-                color: kGreyColor,
-                size: 12,
-              ),
-            ),
           ),
           CircleAvatar(
             radius: 7,
