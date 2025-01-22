@@ -7,9 +7,9 @@ class ApiInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     super.onRequest(options, handler);
-    options.headers['token'] =
+    options.headers['Authorization'] =
         CacheHelper().getData(key: sharedPrefUserToken) != null
-            ? 'FOODAPI ${CacheHelper().getData(key: sharedPrefUserToken)}'
+            ? 'Bearer ${CacheHelper().getData(key: sharedPrefUserToken)}'
             : null;
   }
 }
