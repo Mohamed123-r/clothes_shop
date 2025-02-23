@@ -1,4 +1,5 @@
-import 'package:clothes_shop_app/features/profile/domain/entities/profile_entity.dart';
+
+import '../../domain/entities/profile_entity.dart';
 
 class ProfileModel {
   ProfileModel({

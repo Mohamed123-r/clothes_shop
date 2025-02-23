@@ -4,9 +4,10 @@ import 'package:clothes_shop_app/core/api/end_point.dart';
 import 'package:clothes_shop_app/core/error/exceptions.dart';
 import 'package:clothes_shop_app/core/error/failures.dart';
 import 'package:clothes_shop_app/features/profile/data/models/profile_model.dart';
-import 'package:clothes_shop_app/features/profile/domain/entities/profile_entity.dart';
 import 'package:clothes_shop_app/features/profile/domain/repos/profile_repo.dart';
 import 'package:dartz/dartz.dart';
+
+import '../../domain/entities/profile_entity.dart';
 
 class ProfileRepoImpl implements ProfileRepo {
   final DioConsumer dioConsumer;
