@@ -1,5 +1,4 @@
 import 'package:clothes_shop_app/features/authentication/login/presentation/manage/cubits/login_cubit.dart';
-import 'package:clothes_shop_app/features/authentication/login/presentation/view/widgets/log_in_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

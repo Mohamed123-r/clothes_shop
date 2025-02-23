@@ -4,10 +4,8 @@ import 'package:clothes_shop_app/core/utils/styles.dart';
 import 'package:clothes_shop_app/core/widgets/custom_button.dart';
 import 'package:clothes_shop_app/generated/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../manage/cubits/login_cubit.dart';
 
 class CallActionSectionFromLogInView extends StatelessWidget {
   const CallActionSectionFromLogInView({

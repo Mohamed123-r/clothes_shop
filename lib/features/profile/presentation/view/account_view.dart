@@ -5,7 +5,6 @@ import 'package:clothes_shop_app/features/profile/presentation/manage/cubits/pro
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'widgets/account_list_tile_item.dart';
 import 'widgets/account_section.dart';
 import 'widgets/list_view_section.dart';
 

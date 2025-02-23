@@ -81,9 +81,9 @@ final int id;
                         ),
                       ),
                     ),
-                    errorWidget: (context, url, error) => SizedBox(
+                    errorWidget: (context, url, error) => const SizedBox(
                       width: double.infinity,
-                      child: const Icon(
+                      child: Icon(
                         Icons.error,
                       ),
                     ),
