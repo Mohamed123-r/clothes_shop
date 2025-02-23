@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../constants.dart';
-import '../../../../core/utils/styles.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
-import '../../../../generated/assets.dart';
 import 'widgets/account_section_from_account_details.dart';
 import 'widgets/custom_item_from_edit_ and_account_details.dart';
 

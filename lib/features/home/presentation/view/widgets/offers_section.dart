@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:clothes_shop_app/constants.dart';
 import 'package:clothes_shop_app/core/utils/styles.dart';
-import 'package:clothes_shop_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
