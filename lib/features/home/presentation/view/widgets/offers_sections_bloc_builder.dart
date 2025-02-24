@@ -13,10 +13,12 @@ class OffersSectionBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<OfferCubit, OfferState  >(
+    return BlocBuilder<OfferCubit, OfferState>(
       builder: (context, state) {
         if (state is OfferSuccess) {
-          return OffersSection(offers: state.offers,);
+          return OffersSection(
+            offers: state.offers,
+          );
         } else if (state is OfferFailure) {
           return const Center(
             child: Text(
@@ -25,12 +27,11 @@ class OffersSectionBlocBuilder extends StatelessWidget {
           );
         } else {
           return Skeletonizer(
-            child: OffersSection(offers: getDummyOffers(),)
-          );
+              child: OffersSection(
+            offers: getDummyOffers(),
+          ));
         }
       },
     );
   }
 }
-
-
