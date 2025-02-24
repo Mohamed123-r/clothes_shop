@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../domain/entities/category_details_entity.dart';
 
 class CategoriesDetailsViewBody extends StatelessWidget {
-  const CategoriesDetailsViewBody({super.key, required this.categoriesDetails});
+  const CategoriesDetailsViewBody({
+    super.key,
+    required this.categoriesDetails,
+  });
 
   final List<CategoryDetailsEntity> categoriesDetails;
 

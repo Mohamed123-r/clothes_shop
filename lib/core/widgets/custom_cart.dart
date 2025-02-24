@@ -8,15 +8,17 @@ import '../../constants.dart';
 import '../utils/styles.dart';
 
 class CustomCart extends StatelessWidget {
-  const CustomCart(
-      {super.key,
-      required this.title,
-      required this.subTitle,
-      required this.price,
-      required this.image, required this.id});
+  const CustomCart({
+    super.key,
+    required this.title,
+    required this.subTitle,
+    required this.price,
+    required this.image,
+    required this.id,
+  });
 
   final String title;
-final int id;
+  final int id;
   final String subTitle;
 
   final String price;
@@ -30,11 +32,9 @@ final int id;
         Navigator.push(
           context,
           AppRouter.router(
-             RouteSettings(
-              name: AppRouter.kProductDetailsView,arguments: {
+            RouteSettings(name: AppRouter.kProductDetailsView, arguments: {
               'id': id,
-              }
-            ),
+            }),
           ),
         );
       },

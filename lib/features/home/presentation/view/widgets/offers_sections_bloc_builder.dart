@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../../core/function_help/get_dummy_product.dart';
-import '../../manage/cubits/offer_cubit.dart';
+import '../../manage/cubits/offers_cubit/offer_cubit.dart';
 import 'offers_section.dart';
 
 class OffersSectionBlocBuilder extends StatelessWidget {

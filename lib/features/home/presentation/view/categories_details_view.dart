@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/function_help/get_it.dart';
 import '../../domain/repos/home_repo.dart';
-import '../manage/cubits/category_cubit.dart';
+import '../manage/cubits/category_cubit/category_cubit.dart';
 import 'widgets/categories_details_view_body.dart';
 
 class CategoriesDetailsView extends StatelessWidget {
@@ -23,22 +23,22 @@ class CategoriesDetailsView extends StatelessWidget {
           context,
           title: 'categories details',
         ),
-        body: NewWidget(id:id ,),
+        body: CategoryDetailsViewBuilder(id:id ,),
       ),
     );
   }
 }
 
-class NewWidget extends StatefulWidget {
-  const NewWidget({
+class CategoryDetailsViewBuilder extends StatefulWidget {
+  const CategoryDetailsViewBuilder({
     super.key, required this.id,
   });
 final int id ;
   @override
-  State<NewWidget> createState() => _NewWidgetState();
+  State<CategoryDetailsViewBuilder> createState() => _CategoryDetailsViewBuilderState();
 }
 
-class _NewWidgetState extends State<NewWidget> {
+class _CategoryDetailsViewBuilderState extends State<CategoryDetailsViewBuilder> {
   @override
   void initState() {
     context.read<CategoryCubit>().fetchGetCategoryDetails(widget.id);

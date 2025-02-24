@@ -1,5 +1,5 @@
 import 'package:clothes_shop_app/core/function_help/get_dummy_product.dart';
-import 'package:clothes_shop_app/features/home/presentation/manage/cubits/category_cubit.dart';
+import 'package:clothes_shop_app/features/home/presentation/manage/cubits/category_cubit/category_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';

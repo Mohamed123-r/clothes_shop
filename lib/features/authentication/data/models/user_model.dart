@@ -1,7 +1,6 @@
 import 'package:clothes_shop_app/features/authentication/domain/entities/user_entity.dart';
 
 class UserModel  {
-  @override
   final String email;
   final String passWord;
   final String confirmPassword;

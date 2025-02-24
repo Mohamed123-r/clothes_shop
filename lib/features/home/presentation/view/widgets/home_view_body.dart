@@ -1,13 +1,13 @@
 import 'package:clothes_shop_app/constants.dart';
 import 'package:clothes_shop_app/core/utils/app_router.dart';
 import 'package:clothes_shop_app/core/widgets/custom_search.dart';
-import 'package:clothes_shop_app/features/home/presentation/manage/cubits/category_cubit.dart';
-import 'package:clothes_shop_app/features/home/presentation/manage/cubits/offer_cubit.dart';
+import 'package:clothes_shop_app/features/home/presentation/manage/cubits/category_cubit/category_cubit.dart';
+import 'package:clothes_shop_app/features/home/presentation/manage/cubits/offers_cubit/offer_cubit.dart';
 import 'package:clothes_shop_app/features/home/presentation/view/widgets/sliver_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../manage/cubits/product_cubit.dart';
+import '../../manage/cubits/product_cubit/product_cubit.dart';
 import 'categories_section_bloc_builder.dart';
 import 'new_arrival_section_bloc_consumer.dart';
 import 'offers_sections_bloc_builder.dart';

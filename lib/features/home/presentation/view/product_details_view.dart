@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/function_help/get_it.dart';
 import '../../domain/repos/home_repo.dart';
-import '../manage/cubits/product_cubit.dart';
+import '../manage/cubits/product_cubit/product_cubit.dart';
 import 'widgets/product_details_body.dart';
 
 class ProductDetailsView extends StatelessWidget {

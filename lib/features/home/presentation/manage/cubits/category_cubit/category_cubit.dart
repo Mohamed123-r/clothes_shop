@@ -1,9 +1,8 @@
-import 'package:bloc/bloc.dart';
 import 'package:clothes_shop_app/features/home/domain/entities/category_entity.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../domain/entities/category_details_entity.dart';
-import '../../../domain/repos/home_repo.dart';
+import '../../../../domain/entities/category_details_entity.dart';
+import '../../../../domain/repos/home_repo.dart';
 
 part 'category_state.dart';
 

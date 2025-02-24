@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/function_help/get_it.dart';
 import '../../domain/repos/home_repo.dart';
-import '../manage/cubits/product_cubit.dart';
+import '../manage/cubits/product_cubit/product_cubit.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});

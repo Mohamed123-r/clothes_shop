@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-import '../manage/cubits/category_cubit.dart';
+import '../manage/cubits/category_cubit/category_cubit.dart';
 import 'widgets/categories_view_body.dart';
 
 class CategoriesView extends StatefulWidget {

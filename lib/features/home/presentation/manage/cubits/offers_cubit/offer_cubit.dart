@@ -1,8 +1,8 @@
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../domain/entities/offer_entity.dart';
-import '../../../domain/repos/home_repo.dart';
+import '../../../../domain/entities/offer_entity.dart';
+import '../../../../domain/repos/home_repo.dart';
 
 part 'offer_state.dart';
 
