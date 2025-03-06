@@ -1,3 +1,1 @@
-class CartEntity {
-
-}
+class CartEntity {}

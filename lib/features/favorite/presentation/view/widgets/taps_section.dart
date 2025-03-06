@@ -4,8 +4,6 @@ import 'package:clothes_shop_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-
-
 class TapsSection extends StatelessWidget {
   const TapsSection({
     super.key,

@@ -10,6 +10,6 @@ class ApiInterceptor extends Interceptor {
     options.headers['Authorization'] =
         CacheHelper().getData(key: sharedPrefUserToken) != null
             ? 'Bearer ${CacheHelper().getData(key: sharedPrefUserToken)}'
-            : null; 
+            : null;
   }
 }

@@ -1,8 +1,8 @@
 import 'package:clothes_shop_app/features/cart/presentation/view/my_cart_view.dart';
 import 'package:clothes_shop_app/features/home/presentation/view/categories_view.dart';
-import 'package:clothes_shop_app/features/home/presentation/manage/cubits/category_cubit.dart';
-import 'package:clothes_shop_app/features/home/presentation/manage/cubits/offer_cubit.dart';
-import 'package:clothes_shop_app/features/home/presentation/manage/cubits/product_cubit.dart';
+import 'package:clothes_shop_app/features/home/presentation/manage/cubits/category_cubit/category_cubit.dart';
+import 'package:clothes_shop_app/features/home/presentation/manage/cubits/offers_cubit/offer_cubit.dart';
+import 'package:clothes_shop_app/features/home/presentation/manage/cubits/product_cubit/product_cubit.dart';
 import 'package:clothes_shop_app/features/home/presentation/view/home_view.dart';
 import 'package:clothes_shop_app/features/profile/domain/repos/profile_repo.dart';
 import 'package:clothes_shop_app/features/profile/presentation/manage/cubits/profile_cubit.dart';

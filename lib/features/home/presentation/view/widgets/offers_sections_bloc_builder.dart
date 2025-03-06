@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../../core/function_help/get_dummy_product.dart';
-import '../../manage/cubits/offer_cubit.dart';
+import '../../manage/cubits/offers_cubit/offer_cubit.dart';
 import 'offers_section.dart';
 
 class OffersSectionBlocBuilder extends StatelessWidget {
@@ -13,10 +13,12 @@ class OffersSectionBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<OfferCubit, OfferState  >(
+    return BlocBuilder<OfferCubit, OfferState>(
       builder: (context, state) {
         if (state is OfferSuccess) {
-          return OffersSection(offers: state.offers,);
+          return OffersSection(
+            offers: state.offers,
+          );
         } else if (state is OfferFailure) {
           return const Center(
             child: Text(
@@ -25,12 +27,11 @@ class OffersSectionBlocBuilder extends StatelessWidget {
           );
         } else {
           return Skeletonizer(
-            child: OffersSection(offers: getDummyOffers(),)
-          );
+              child: OffersSection(
+            offers: getDummyOffers(),
+          ));
         }
       },
     );
   }
 }
-
-

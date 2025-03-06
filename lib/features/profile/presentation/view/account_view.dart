@@ -18,10 +18,10 @@ class AccountView extends StatefulWidget {
 class _AccountViewState extends State<AccountView> {
   @override
   void initState() {
-
     context.read<ProfileCubit>().getProfileDataDetails();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

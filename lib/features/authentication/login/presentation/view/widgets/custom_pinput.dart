@@ -16,7 +16,7 @@ class _PinputExampleState extends State<CustomPinput> {
   Widget build(BuildContext context) {
     final defaultPinTheme = PinTheme(
       width: 46,
-      height:60,
+      height: 60,
       textStyle: const TextStyle(
         fontSize: 20,
         color: Colors.black,

@@ -1,7 +1,6 @@
 import 'package:clothes_shop_app/constants.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 class CustomBlocObserver extends BlocObserver {
   @override
   void onCreate(BlocBase bloc) {

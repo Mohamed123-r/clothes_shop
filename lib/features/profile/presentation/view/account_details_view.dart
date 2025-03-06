@@ -15,7 +15,7 @@ class AccountDetailsView extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           children: [
-             AccountSectionFromAccountDetails(),
+            AccountSectionFromAccountDetails(),
             SizedBox(
               height: 32,
             ),

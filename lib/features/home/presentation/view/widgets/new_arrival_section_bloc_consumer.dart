@@ -2,7 +2,7 @@ import 'package:clothes_shop_app/core/function_help/get_dummy_product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
-import '../../manage/cubits/product_cubit.dart';
+import '../../manage/cubits/product_cubit/product_cubit.dart';
 import 'new_arrival_section.dart';
 
 class NewArrivalSectionBlocConsumer extends StatelessWidget {

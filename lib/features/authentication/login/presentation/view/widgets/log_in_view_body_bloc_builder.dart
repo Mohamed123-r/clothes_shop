@@ -27,10 +27,8 @@ class LogInViewBodyBlocBuilder extends StatelessWidget {
               ),
             ),
             (route) => false,
-
           );
-          CacheHelper.sharedPreferences
-              .setBool( sharedPrefLogInSuccess, true);
+          CacheHelper.sharedPreferences.setBool(sharedPrefLogInSuccess, true);
         } else if (state is LoginFailure) {
           customError(context, massage: state.message);
         }

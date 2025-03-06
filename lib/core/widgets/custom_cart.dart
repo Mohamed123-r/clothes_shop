@@ -1,27 +1,30 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:clothes_shop_app/core/utils/app_router.dart';
-import 'package:clothes_shop_app/core/widgets/custom_love.dart';
 import 'package:clothes_shop_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../constants.dart';
 import '../utils/styles.dart';
 
-class CustomCart extends StatelessWidget {
-  const CustomCart(
-      {super.key,
-      required this.title,
-      required this.subTitle,
-      required this.price,
-      required this.image, required this.id});
+class CustomCard extends StatelessWidget {
+  const CustomCard({
+    super.key,
+    required this.title,
+    required this.subTitle,
+    required this.price,
+    required this.image,
+    required this.id,
+    required this.materials,
+  });
 
   final String title;
-final int id;
+  final int id;
   final String subTitle;
 
   final String price;
 
   final String image;
+  final String materials;
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +33,9 @@ final int id;
         Navigator.push(
           context,
           AppRouter.router(
-             RouteSettings(
-              name: AppRouter.kProductDetailsView,arguments: {
+            RouteSettings(name: AppRouter.kProductDetailsView, arguments: {
               'id': id,
-              }
-            ),
+            }),
           ),
         );
       },
@@ -88,10 +89,17 @@ final int id;
                       ),
                     ),
                   ),
-                  const Positioned(
+                  ////// need to change
+                  Positioned(
                     top: 10,
                     right: 10,
-                    child: CustomLove(),
+                    child: Text(
+                      materials,
+                      style: TextStyle(
+                        color: kWhiteColor,
+                        backgroundColor: kDarkGreyColor,
+                      ),
+                    ),
                   ),
                 ],
               ),

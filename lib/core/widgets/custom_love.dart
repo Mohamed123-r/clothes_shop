@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
 import '../../constants.dart';
 
-class CustomLove extends StatefulWidget {
-  const CustomLove({super.key});
+class CustomLove extends StatelessWidget {
+  const CustomLove({
+    super.key,
+    required this.isFavorite,
+    required this.isFavoriteOnTap,
+  });
 
-  @override
-  State<CustomLove> createState() => _CustomLoveState();
-}
+  final bool isFavorite;
 
-class _CustomLoveState extends State<CustomLove> {
-  bool isFavorite = false;
-
+  final Function() isFavoriteOnTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        setState(() {
-          isFavorite = !isFavorite;
-        });
-      },
+      onTap: isFavoriteOnTap,
       child: CircleAvatar(
         radius: 16,
         backgroundColor: kLightGreyColor,

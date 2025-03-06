@@ -32,7 +32,7 @@ class ProductDetailsBody extends StatelessWidget {
               ),
             ],
           ),
-          const AppBarSection(),
+          AppBarSection(),
         ],
       ),
     );

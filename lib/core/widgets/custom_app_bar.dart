@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../utils/styles.dart';
 
-AppBar customAppbar(BuildContext context , { required String title , List<Widget>? actions  }) {
+AppBar customAppbar(BuildContext context,
+    {required String title, List<Widget>? actions}) {
   return AppBar(
-
-
     backgroundColor: Colors.transparent,
     leading: IconButton(
       onPressed: () {
@@ -16,8 +15,8 @@ AppBar customAppbar(BuildContext context , { required String title , List<Widget
         size: 18,
       ),
     ),
-    title:  Text(
-      title ,
+    title: Text(
+      title,
       style: Styles.subTitle1Bold,
     ),
     actions: actions,

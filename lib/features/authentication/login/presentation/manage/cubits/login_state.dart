@@ -12,6 +12,4 @@ final class LoginFailure extends LoginState {
   LoginFailure(this.message);
 }
 
-final class LoginSuccess extends LoginState {
-
-}
+final class LoginSuccess extends LoginState {}

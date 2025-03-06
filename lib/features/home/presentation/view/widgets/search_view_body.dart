@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../../core/function_help/get_dummy_product.dart';
-import '../../manage/cubits/product_cubit.dart';
+import '../../manage/cubits/product_cubit/product_cubit.dart';
 
 class SearchViewBody extends StatefulWidget {
   const SearchViewBody({
@@ -20,7 +20,6 @@ class _SearchViewBodyState extends State<SearchViewBody> {
   TextEditingController controller = TextEditingController();
   String searchText = '';
   List<ProductEntity> answerdList = [];
-
 
   @override
   void initState() {
@@ -40,8 +39,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                 children: [
                   CustomSearch(
                     onChanged: (text) {
-                      List<ProductEntity> searchProduct =
-                          state.productsList;
+                      List<ProductEntity> searchProduct = state.productsList;
                       answerdList.clear();
                       searchText = text;
                       for (var i = 0; i < searchProduct.length; i++) {
@@ -50,13 +48,11 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                             .toLowerCase()
                             .contains(text.toLowerCase())) {
                           answerdList.add(searchProduct[i]);
-
                         }
                       }
                       setState(() {});
                     },
                   ),
-
                   searchText.isNotEmpty && answerdList.isEmpty
                       ? const Padding(
                           padding: EdgeInsets.only(top: 42.0),

@@ -2,8 +2,9 @@ import 'package:clothes_shop_app/features/home/domain/entities/offer_entity.dart
 
 class OfferModel {
   OfferModel({
-      this.id, 
-      this.image,});
+    this.id,
+    this.image,
+  });
 
   OfferModel.fromJson(dynamic json) {
     id = json['id'];
@@ -11,11 +12,9 @@ class OfferModel {
   }
 
   OfferEntity toEntity() {
-    return OfferEntity(
-      id: id!,
-      image: image!
-    );
+    return OfferEntity(id: id!, image: image!);
   }
+
   num? id;
   String? image;
 
@@ -25,5 +24,4 @@ class OfferModel {
     map['image'] = image;
     return map;
   }
-
 }

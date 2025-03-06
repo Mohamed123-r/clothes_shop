@@ -9,8 +9,9 @@ class CacheHelper {
   init() async {
     sharedPreferences = await SharedPreferences.getInstance();
   }
+
 //! Save Map<String, dynamic> as a JSON string
-  Future<bool> saveMap( {
+  Future<bool> saveMap({
     required String key,
     required Map<String, dynamic> value,
   }) async {
@@ -20,12 +21,14 @@ class CacheHelper {
 
   //! Retrieve Map<String, dynamic> from a saved JSON string
   Map<String, dynamic>? getMap({required String key}) {
-    String? jsonString = sharedPreferences.getString(key); // Retrieve JSON string
+    String? jsonString =
+        sharedPreferences.getString(key); // Retrieve JSON string
     if (jsonString != null) {
       return jsonDecode(jsonString); // Convert JSON string back to Map
     }
     return null; // Return null if key doesn't exist
   }
+
   String? getDataString({required String key}) {
     return sharedPreferences.getString(key);
   }

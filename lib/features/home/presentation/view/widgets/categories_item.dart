@@ -22,7 +22,7 @@ class CategoriesItem extends StatelessWidget {
           backgroundColor: Colors.grey.shade200,
           child: CachedNetworkImage(
             imageUrl: image,
-            placeholder: (context, url) =>  const Skeletonizer(
+            placeholder: (context, url) => const Skeletonizer(
               child: SizedBox(),
             ),
             imageBuilder: (context, imageProvider) => Container(

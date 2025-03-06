@@ -108,12 +108,13 @@ class _OnboardingViewState extends State<OnboardingView>
                       ),
                     );
                     CacheHelper.sharedPreferences
-                        .setBool( sharedPrefOnBoardingImage, true);
+                        .setBool(sharedPrefOnBoardingImage, true);
+                  } else {
+                    _controller?.animateTo(_selectedIndex += 1);
+                    setState(
+                      () {},
+                    );
                   }
-                  _controller?.animateTo(_selectedIndex += 1);
-                  setState(
-                    () {},
-                  );
                 },
               ),
             ),
