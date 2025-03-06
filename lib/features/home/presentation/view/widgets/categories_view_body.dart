@@ -25,10 +25,10 @@ class CategoriesViewBody extends StatelessWidget {
                 context,
                 AppRouter.router(
                   RouteSettings(
-                    name: AppRouter.kCategoriesDetailsView,arguments: {
-                    'id':categories[index].id,
-
-                  },
+                    name: AppRouter.kCategoriesDetailsView,
+                    arguments: {
+                      'id': categories[index].id,
+                    },
                   ),
                 ),
               );

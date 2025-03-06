@@ -57,12 +57,13 @@ class SearchListItem extends StatelessWidget {
                   children: List.generate(
                     products.length,
                     (index) {
-                      return CustomCart(
+                      return CustomCard(
                         id: products[index].id as int,
                         title: products[index].name,
                         subTitle: products[index].subCategory,
                         price: products[index].price.toString(),
                         image: products[index].imagePath,
+                        materials: products[index].material,
                       );
                     },
                   ),

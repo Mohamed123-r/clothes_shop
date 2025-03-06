@@ -11,7 +11,7 @@ class MyFavorite extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppbar(context, title: 'My Favorite'),
-      body:  Padding(
+      body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           children: [
@@ -28,12 +28,14 @@ class MyFavorite extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 children: List.generate(
                   3,
-                      (index) {
-                    return const CustomCart(
+                  (index) {
+                    return const CustomCard(
                       title: 'Muslim Tops Loose',
                       subTitle: 'Isdal',
                       price: '1500EG',
-                      image: Assets.imagesTest, id: 1,
+                      image: Assets.imagesTest,
+                      id: 1,
+                      materials: 'cotons',
                     );
                   },
                 ),

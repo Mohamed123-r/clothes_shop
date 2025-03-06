@@ -1,6 +1,6 @@
 import 'package:clothes_shop_app/features/authentication/domain/entities/user_entity.dart';
 
-class UserModel  {
+class UserModel {
   final String email;
   final String passWord;
   final String confirmPassword;
@@ -29,19 +29,21 @@ class UserModel  {
         'isMale': isMale,
       };
 
-  factory UserModel.fromEntity(UserEntity user) =>
+  factory UserModel.fromEntity(UserEntity user) => UserModel(
+      email: user.email,
+      passWord: user.passWord,
+      confirmPassword: user.confirmPassword,
+      name: user.name,
+      phone: user.phone,
+      location: user.location,
+      isMale: user.isMale);
 
-      UserModel(
-          email: user.email,
-          passWord: user.passWord,
-          confirmPassword: user.confirmPassword,
-          name: user.name,
-          phone: user.phone,
-          location: user.location,
-          isMale: user.isMale);
-
-  UserModel({required this.email, required this.passWord, required this.confirmPassword, required this.name, required this.phone, required this.location, required this.isMale});
-
-
-
+  UserModel(
+      {required this.email,
+      required this.passWord,
+      required this.confirmPassword,
+      required this.name,
+      required this.phone,
+      required this.location,
+      required this.isMale});
 }

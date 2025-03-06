@@ -16,7 +16,9 @@ class CategoriesSectionBlocBuilder extends StatelessWidget {
     return BlocBuilder<CategoryCubit, CategoryState>(
       builder: (context, state) {
         if (state is CategorySuccess) {
-          return CategoriesSection(categories: state.categories,);
+          return CategoriesSection(
+            categories: state.categories,
+          );
         } else if (state is CategoryFailure) {
           return const Center(
             child: Text(
@@ -25,8 +27,8 @@ class CategoriesSectionBlocBuilder extends StatelessWidget {
           );
         } else {
           return Skeletonizer(
-            child: CategoriesSection(categories: getDummyCategories(),
-
+            child: CategoriesSection(
+              categories: getDummyCategories(),
             ),
           );
         }

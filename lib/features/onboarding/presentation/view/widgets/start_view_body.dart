@@ -64,20 +64,23 @@ class StartViewBody extends StatelessWidget {
                 ),
               ),
               TextButton(
-                 onPressed: () {   Navigator.push(
-                   context,
-                   AppRouter.router(
-                     const RouteSettings(
-                       name: AppRouter.kLogInView,
-                     ),
-                   ),
-                 ); }, child: Text(
-                "LOGIN",
-                style: Styles.subTitle2Bold.copyWith(
-                  color: kBlackColor,
-                  decoration: TextDecoration.underline,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    AppRouter.router(
+                      const RouteSettings(
+                        name: AppRouter.kLogInView,
+                      ),
+                    ),
+                  );
+                },
+                child: Text(
+                  "LOGIN",
+                  style: Styles.subTitle2Bold.copyWith(
+                    color: kBlackColor,
+                    decoration: TextDecoration.underline,
+                  ),
                 ),
-              ),
               ),
             ],
           ),

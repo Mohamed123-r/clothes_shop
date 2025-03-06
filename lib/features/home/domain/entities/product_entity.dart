@@ -1,13 +1,13 @@
 class ProductEntity {
- final num id;
- final String name;
- final  num price;
- final  String imagePath;
- final  String description;
- final String material;
- final String subCategory;
- final num categoryId;
- final String category;
+  final num id;
+  final String name;
+  final num price;
+  final String imagePath;
+  final String description;
+  final String material;
+  final String subCategory;
+  final num categoryId;
+  final String category;
 
   const ProductEntity({
     required this.id,

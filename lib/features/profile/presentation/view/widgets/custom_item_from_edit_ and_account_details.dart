@@ -26,7 +26,7 @@ class CustomItemFromEditAndAccountDetails extends StatelessWidget {
           style: Styles.subTitle1Bold,
         ),
         TextField(
-          readOnly: !isEdit ,
+          readOnly: !isEdit,
           decoration: InputDecoration(
               // contentPadding: EdgeInsets.symmetric(vertical: 0.0),
               hintText: value,

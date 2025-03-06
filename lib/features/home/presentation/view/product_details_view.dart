@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:clothes_shop_app/core/function_help/get_dummy_product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -51,29 +53,35 @@ class _ProductDetailsBodyBlocBuilderState
     extends State<ProductDetailsBodyBlocBuilder> {
   @override
   void initState() {
-    context.read<ProductCubit>().fetchGetProductDetails(widget.id);
+    ProductCubit cubit = context.read<ProductCubit>();
+    cubit.fetchGetProductDetails(widget.id);
+
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    ProductCubit cubit = context.read<ProductCubit>();
+
     return BlocBuilder<ProductCubit, ProductState>(
       builder: (context, state) {
-        if (state is ProductDetailsSuccess) {
-          return ProductDetailsBody(
-            productDetails: state.productDetails,
+        log(state.toString());
+        if (state is ProductLoading) {
+          return Skeletonizer(
+            child: ProductDetailsBody(
+              productDetails: getDummyProduct(),
+            ),
           );
-        } else if (state is ProductFailure) {
+        }
+        if (state is ProductFailure) {
           return const Center(
             child: Text(
               "Oops something went wrong, please try later",
             ),
           );
         } else {
-          return Skeletonizer(
-            child: ProductDetailsBody(
-              productDetails: getDummyProduct(),
-            ),
+          return ProductDetailsBody(
+            productDetails: cubit.prodcutDetails!,
           );
         }
       },

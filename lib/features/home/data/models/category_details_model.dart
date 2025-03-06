@@ -35,8 +35,6 @@ class CategoryDetailsModel {
   num? categoryId;
   String? category;
 
-
-
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['id'] = id;
@@ -49,8 +47,8 @@ class CategoryDetailsModel {
     map['categoryId'] = categoryId;
     map['category'] = category;
     return map;
-
   }
+
   CategoryDetailsEntity toEntity() {
     return CategoryDetailsEntity(
         id: id!,

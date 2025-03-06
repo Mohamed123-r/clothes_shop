@@ -52,23 +52,21 @@ class OnboardingImageSection extends StatelessWidget {
             ),
             const Spacer(),
             Stack(
-              clipBehavior: Clip.none ,
-          children: [
-            Positioned(
-              top: -40,
-              left: -20,
-              child: Image.asset(
-                Assets.imagesOnboarding,
-
-                fit: BoxFit.fill,
-              ),
-            ),
-            Image.asset(
-              image,
-
-              fit: BoxFit.fill,
-            ),
-          ],
+              clipBehavior: Clip.none,
+              children: [
+                Positioned(
+                  top: -40,
+                  left: -20,
+                  child: Image.asset(
+                    Assets.imagesOnboarding,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                Image.asset(
+                  image,
+                  fit: BoxFit.fill,
+                ),
+              ],
             ),
             const Spacer(),
           ],

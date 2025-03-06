@@ -7,9 +7,12 @@ class Assets {
   static const String imagesCameraIcon = 'assets/images/camera_icon.svg';
   static const String imagesCartIcon1 = 'assets/images/cart_icon1.svg';
   static const String imagesCartIcon2 = 'assets/images/cart_icon2.svg';
-  static const String imagesCategoriesIcon1 = 'assets/images/categories_icon1.svg';
-  static const String imagesCategoriesIcon2 = 'assets/images/categories_icon2.svg';
-  static const String imagesCategoriesTest = 'assets/images/Categories-test.png';
+  static const String imagesCategoriesIcon1 =
+      'assets/images/categories_icon1.svg';
+  static const String imagesCategoriesIcon2 =
+      'assets/images/categories_icon2.svg';
+  static const String imagesCategoriesTest =
+      'assets/images/Categories-test.png';
   static const String imagesEmailIcon = 'assets/images/email_icon.svg';
   static const String imagesFilterIcon = 'assets/images/filter_icon.svg';
   static const String imagesGoogleIcon = 'assets/images/GoogleIcon.svg';
@@ -23,10 +26,10 @@ class Assets {
   static const String imagesPasswordIcon = 'assets/images/password_icon.svg';
   static const String imagesPersonIcon = 'assets/images/person_icon.svg';
   static const String imagesPhoneIcon = 'assets/images/phoneIcon.svg';
-  static const String imagesProducteDetailsTest = 'assets/images/producteDetailsTest.png';
+  static const String imagesProducteDetailsTest =
+      'assets/images/producteDetailsTest.png';
   static const String imagesSearchIcon = 'assets/images/search_icon.svg';
   static const String imagesSliderTest = 'assets/images/sliderTest.png';
   static const String imagesSplashImage = 'assets/images/splashImage.png';
   static const String imagesTest = 'assets/images/test.png';
-
 }

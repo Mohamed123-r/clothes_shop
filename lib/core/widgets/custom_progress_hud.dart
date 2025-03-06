@@ -17,7 +17,6 @@ class CustomProgressHud extends StatelessWidget {
       progressIndicator: const CircularProgressIndicator(
         color: kBlackColor,
       ),
-
       child: child,
     );
   }

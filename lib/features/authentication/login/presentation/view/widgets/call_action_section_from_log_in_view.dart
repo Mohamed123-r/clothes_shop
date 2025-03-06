@@ -6,13 +6,11 @@ import 'package:clothes_shop_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-
 class CallActionSectionFromLogInView extends StatelessWidget {
   const CallActionSectionFromLogInView({
-    super.key, required this.onPressed,
-
+    super.key,
+    required this.onPressed,
   });
-
 
   final Function() onPressed;
 

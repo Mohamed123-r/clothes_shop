@@ -26,12 +26,13 @@ List<ProductEntity> getDummyProducts() {
   }
   return products;
 }
+
 CategoryDetailsEntity getDummyCategoryDetail() {
-  return  CategoryDetailsEntity(
+  return CategoryDetailsEntity(
     id: 1,
     name: "name",
     imagePath:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3wxJ0c-jC6VcDASO9aiDWD9zWAeJLKrS5gg&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3wxJ0c-jC6VcDASO9aiDWD9zWAeJLKrS5gg&s",
     price: 0,
     description: "description",
     material: "material",
@@ -48,6 +49,7 @@ List<CategoryDetailsEntity> getDummyCategoryDetails() {
   }
   return products;
 }
+
 OfferEntity getDummyOffer() {
   return OfferEntity(
     id: 1,

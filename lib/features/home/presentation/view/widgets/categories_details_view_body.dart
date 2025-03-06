@@ -24,12 +24,13 @@ class CategoriesDetailsViewBody extends StatelessWidget {
         children: List.generate(
           categoriesDetails.length,
           (index) {
-            return CustomCart(
+            return CustomCard(
               title: categoriesDetails[index].name,
               subTitle: categoriesDetails[index].subCategory,
               price: categoriesDetails[index].price.toString(),
               image: categoriesDetails[index].imagePath,
               id: categoriesDetails[index].id as int,
+              materials: categoriesDetails[index].material,
             );
           },
         ),

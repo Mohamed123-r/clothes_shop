@@ -12,7 +12,6 @@ class OnboardingViewBody extends StatelessWidget {
     this.onPressedToSkip,
     required this.image,
     required this.title,
-
   });
 
   final bool? theFirst;
@@ -21,7 +20,6 @@ class OnboardingViewBody extends StatelessWidget {
   final Function()? onPressedToSkip;
   final String image;
   final String title;
-
 
   @override
   Widget build(BuildContext context) {

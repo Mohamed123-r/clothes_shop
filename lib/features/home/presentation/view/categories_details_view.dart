@@ -10,7 +10,7 @@ import 'widgets/categories_details_view_body.dart';
 
 class CategoriesDetailsView extends StatelessWidget {
   const CategoriesDetailsView({super.key, required this.id});
-  final int id ;
+  final int id;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,9 @@ class CategoriesDetailsView extends StatelessWidget {
           context,
           title: 'categories details',
         ),
-        body: CategoryDetailsViewBuilder(id:id ,),
+        body: CategoryDetailsViewBuilder(
+          id: id,
+        ),
       ),
     );
   }
@@ -31,19 +33,23 @@ class CategoriesDetailsView extends StatelessWidget {
 
 class CategoryDetailsViewBuilder extends StatefulWidget {
   const CategoryDetailsViewBuilder({
-    super.key, required this.id,
+    super.key,
+    required this.id,
   });
-final int id ;
+  final int id;
   @override
-  State<CategoryDetailsViewBuilder> createState() => _CategoryDetailsViewBuilderState();
+  State<CategoryDetailsViewBuilder> createState() =>
+      _CategoryDetailsViewBuilderState();
 }
 
-class _CategoryDetailsViewBuilderState extends State<CategoryDetailsViewBuilder> {
+class _CategoryDetailsViewBuilderState
+    extends State<CategoryDetailsViewBuilder> {
   @override
   void initState() {
     context.read<CategoryCubit>().fetchGetCategoryDetails(widget.id);
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CategoryCubit, CategoryState>(
@@ -62,7 +68,6 @@ class _CategoryDetailsViewBuilderState extends State<CategoryDetailsViewBuilder>
           return Skeletonizer(
             child: CategoriesDetailsViewBody(
               categoriesDetails: getDummyCategoryDetails(),
-
             ),
           );
         }

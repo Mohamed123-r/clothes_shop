@@ -21,7 +21,6 @@ class _SearchViewBodyState extends State<SearchViewBody> {
   String searchText = '';
   List<ProductEntity> answerdList = [];
 
-
   @override
   void initState() {
     context.read<ProductCubit>().fetchGetAllProducts();
@@ -40,8 +39,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                 children: [
                   CustomSearch(
                     onChanged: (text) {
-                      List<ProductEntity> searchProduct =
-                          state.productsList;
+                      List<ProductEntity> searchProduct = state.productsList;
                       answerdList.clear();
                       searchText = text;
                       for (var i = 0; i < searchProduct.length; i++) {
@@ -50,13 +48,11 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                             .toLowerCase()
                             .contains(text.toLowerCase())) {
                           answerdList.add(searchProduct[i]);
-
                         }
                       }
                       setState(() {});
                     },
                   ),
-
                   searchText.isNotEmpty && answerdList.isEmpty
                       ? const Padding(
                           padding: EdgeInsets.only(top: 42.0),
